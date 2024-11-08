@@ -43,13 +43,12 @@ namespace TP2
 
         public static int GetSuitFromCardIndex(int index)
         {
-            // PROF : À COMPLETER. Le code ci-après est incorrect
-            return 0;
+            return index / NUM_CARDS_PER_SUIT;
         }
         public static int GetValueFromCardIndex(int index)
         {
-            // PROF : À COMPLETER. Le code ci-après est incorrect
-            return 0;
+            return index % 13;
+            
         }
 
         public static void DrawFaces(int[] cardValues, bool[] selectedCards, bool[] availableCards)
