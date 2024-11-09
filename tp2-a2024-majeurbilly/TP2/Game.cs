@@ -50,25 +50,25 @@ namespace TP2
 
         public static int GetValueFromCardIndex(int index)
         {
-            return index % 13;
+            return (index % 13) + 1;
         }
 
-        public static void DrawFaces(int[] cardValues, bool[] selectedCards, bool[] availableCards)
+        public static void DistributeCard(int[] cardValues, bool[] selectedCards, bool[] availableCards)
         {
             for (int i = 0; i < selectedCards.Length; i++)
             {
                 if (selectedCards[i] == false)
                 {
-                    int newCarteIndex = 0;
+                    int newCarte;
                     
                     do
                     {
-                        newCarteIndex += new Random().Next(0, 52);
+                        newCarte = new Random().Next(0, 52);
 
 
-                    } while (!availableCards[newCarteIndex]);
-                    cardValues[i] = newCarteIndex;
-                    availableCards[newCarteIndex] = false;
+                    } while (!availableCards[newCarte]);
+                    cardValues[i] = newCarte;
+                    availableCards[newCarte] = false;
                 }
             }
         }
@@ -88,15 +88,6 @@ namespace TP2
             return 0;
         }
 
-        // A COMPLETER
-        // ...
-        // Il manque toutes les méthodes pour trouver les différentes combinaisons.
-        // Référez-vous aux tests pour les noms de fonctions appropriés.
-        // ATTENTION! Suivez bien les noms dans les tests, car je vais utiliser mon propre fichier
-        // (qui est exactement comme le vôtre, mais vous ne pourrez pas me faire parvenir un fichier
-        // de tests avec vos noms de fonctions).
-
-
         public static void ShowScore(int[] cardIndexes)
         {
             int hand = GetHandScore(cardIndexes);
@@ -104,14 +95,27 @@ namespace TP2
         }
 
 
-        public static int GetHighestCardValue(int[] values)
+        public static int GetHighestCardValue(int[] cardsValues)
         {
-            throw new NotImplementedException();
+            int highestValue = 0;
+            foreach (int i in cardsValues)
+            {
+                if (cardsValues[i] > highestValue)
+                {
+                    highestValue = cardsValues[i];
+                }
+            }
+            return highestValue;
         }
 
-        public static bool HasOnlySameColorCards(int[] suits)
+        public static bool HasOnlySameColorCards(int[] cardsInHandOfTheSameColors)
         {
-            throw new NotImplementedException();
+            int handScore = 0;
+            for (int i = 0; i < cardsInHandOfTheSameColors.Length; i++)
+            {
+                handScore += cardsInHandOfTheSameColors[i];
+            }
+            return handScore == 1;
         }
 
         public static bool HasAllSameCardValues(int[] values)
