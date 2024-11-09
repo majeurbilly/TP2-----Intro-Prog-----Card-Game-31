@@ -1,0 +1,17 @@
+C:\Users\jefou\OneDrive\Desktop\TP2-----Intro-Prog-----Card-Game-31\tp2-a2024-majeurbilly\TP2\bin\Debug\net6.0-windows\TP2.exe
+C:\Users\jefou\OneDrive\Desktop\TP2-----Intro-Prog-----Card-Game-31\tp2-a2024-majeurbilly\TP2\bin\Debug\net6.0-windows\TP2.deps.json
+C:\Users\jefou\OneDrive\Desktop\TP2-----Intro-Prog-----Card-Game-31\tp2-a2024-majeurbilly\TP2\bin\Debug\net6.0-windows\TP2.runtimeconfig.json
+C:\Users\jefou\OneDrive\Desktop\TP2-----Intro-Prog-----Card-Game-31\tp2-a2024-majeurbilly\TP2\bin\Debug\net6.0-windows\TP2.dll
+C:\Users\jefou\OneDrive\Desktop\TP2-----Intro-Prog-----Card-Game-31\tp2-a2024-majeurbilly\TP2\bin\Debug\net6.0-windows\TP2.pdb
+C:\Users\jefou\OneDrive\Desktop\TP2-----Intro-Prog-----Card-Game-31\tp2-a2024-majeurbilly\TP2\obj\Debug\net6.0-windows\TP2.Properties.Resources.resources
+C:\Users\jefou\OneDrive\Desktop\TP2-----Intro-Prog-----Card-Game-31\tp2-a2024-majeurbilly\TP2\obj\Debug\net6.0-windows\TP2.csproj.GenerateResource.cache
+C:\Users\jefou\OneDrive\Desktop\TP2-----Intro-Prog-----Card-Game-31\tp2-a2024-majeurbilly\TP2\obj\Debug\net6.0-windows\TP2.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\jefou\OneDrive\Desktop\TP2-----Intro-Prog-----Card-Game-31\tp2-a2024-majeurbilly\TP2\obj\Debug\net6.0-windows\TP2.AssemblyInfoInputs.cache
+C:\Users\jefou\OneDrive\Desktop\TP2-----Intro-Prog-----Card-Game-31\tp2-a2024-majeurbilly\TP2\obj\Debug\net6.0-windows\TP2.AssemblyInfo.cs
+C:\Users\jefou\OneDrive\Desktop\TP2-----Intro-Prog-----Card-Game-31\tp2-a2024-majeurbilly\TP2\obj\Debug\net6.0-windows\TP2.csproj.CoreCompileInputs.cache
+C:\Users\jefou\OneDrive\Desktop\TP2-----Intro-Prog-----Card-Game-31\tp2-a2024-majeurbilly\TP2\obj\Debug\net6.0-windows\TP2.sourcelink.json
+C:\Users\jefou\OneDrive\Desktop\TP2-----Intro-Prog-----Card-Game-31\tp2-a2024-majeurbilly\TP2\obj\Debug\net6.0-windows\TP2.dll
+C:\Users\jefou\OneDrive\Desktop\TP2-----Intro-Prog-----Card-Game-31\tp2-a2024-majeurbilly\TP2\obj\Debug\net6.0-windows\refint\TP2.dll
+C:\Users\jefou\OneDrive\Desktop\TP2-----Intro-Prog-----Card-Game-31\tp2-a2024-majeurbilly\TP2\obj\Debug\net6.0-windows\TP2.pdb
+C:\Users\jefou\OneDrive\Desktop\TP2-----Intro-Prog-----Card-Game-31\tp2-a2024-majeurbilly\TP2\obj\Debug\net6.0-windows\TP2.genruntimeconfig.cache
+C:\Users\jefou\OneDrive\Desktop\TP2-----Intro-Prog-----Card-Game-31\tp2-a2024-majeurbilly\TP2\obj\Debug\net6.0-windows\ref\TP2.dll
