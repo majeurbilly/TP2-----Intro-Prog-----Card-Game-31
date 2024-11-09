@@ -58,11 +58,18 @@ namespace TP2
             for (int i = 0; i < selectedCards.Length; i++)
             {
                 if (selectedCards[i] == false)
+                {
+                    int newCarteIndex = 0;
+                    
                     do
                     {
-                        selectedCards[i] = availableCards[new Random().Next(0, 52)];
-                        
-                    } while (selectedCards[i] == false);
+                        newCarteIndex += new Random().Next(0, 52);
+
+
+                    } while (!availableCards[newCarteIndex]);
+                    cardValues[i] = newCarteIndex;
+                    availableCards[newCarteIndex] = false;
+                }
             }
         }
 
@@ -76,7 +83,7 @@ namespace TP2
             //todo: pas fini 
             int handScore = 0;
             int[] handCards = new int[cardIndexes.Length];
-            
+
 
             return 0;
         }
