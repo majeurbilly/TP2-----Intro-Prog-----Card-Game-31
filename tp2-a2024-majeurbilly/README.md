@@ -111,32 +111,44 @@ la valeur la plus haute entre les cartes en main
 ---
 #################################
 
-#  N'a que des cartes de la même couleur
+#  Avoir que des cartes de la même couleur
 ##  public static bool HasOnlySameColorCards(int[] cardsInHandOfTheSameColors)
 
 ### recoit et retour de la methode
 
 ### la methode recoit:
-- les cartes de la main qui sont tous deja vérifier et de la meme couleur
+- la valeur des cartes en tableau
 
 ### la methode retourne:
-- l'addition des cartes dans la main du joueur
+- true si les cartes sont de la meme couleur
+- false si les cartes sont pas toute du meme couleur
 
 ## algo
-1 - créé int handScore = 0;
+1 - créé int temp qui représente la premiere carte de la main
 
-2 - boucle for tant que i est plus petit que le nb de carte en main
+2 - boucle for pour inspecter les deux derniere cartes
 
-3 - handScore += cardsInHandOfTheSameColors[i]
-
-4 - Ce qui addition les cartes dans une variable qui est retourneé 
+3 - si temp != false ;
 
 
 ---
 #################################
 
+# Avoir toutes les mêmes valeurs de cartes
+## public static bool HasAllSameCardValues(int[] values)
+
+### recoit et retour de la methode
+
+### la methode recoit:
+- les valeurs des catres en main sous forme de tableau
+
+### la methode retourne:
+- true si les cartes ont tous la meme valeur
+- false si les cartes sont une valeur différente
 
 
+---
+#################################
 
 
 

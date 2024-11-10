@@ -108,19 +108,30 @@ namespace TP2
             return highestValue;
         }
 
-        public static bool HasOnlySameColorCards(int[] cardsInHandOfTheSameColors)
+        public static bool HasOnlySameColorCards(int[] cardValues)
         {
-            int handScore = 0;
-            for (int i = 0; i < cardsInHandOfTheSameColors.Length; i++)
+            int temp = GetSuitFromCardIndex(cardValues[0]);
+            for (int i = 1; i < cardValues.Length; i++)
             {
-                handScore += cardsInHandOfTheSameColors[i];
+                if (GetSuitFromCardIndex(cardValues[i]) != temp)
+                {
+                    return false;
+                }
             }
-            return handScore == 1;
+            return true;
         }
 
-        public static bool HasAllSameCardValues(int[] values)
+        public static bool HasAllSameCardValues(int[] cardValues)
         {
-            throw new NotImplementedException();
+            int temp = GetValueFromCardIndex(cardValues[0]);
+            for (int i = 1; i < cardValues.Length; i++)
+            {
+                if (GetValueFromCardIndex(cardValues[i]) != temp)
+                {
+                    return false;
+                }
+            }
+            return true;
         }
 
         public static bool HasAllFaces(int[] values)
