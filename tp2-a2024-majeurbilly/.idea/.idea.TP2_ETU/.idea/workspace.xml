@@ -10,10 +10,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d65d18a7-ed17-4e85-ac2b-0c0ade5a7d87" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TP2/Game.cs" beforeDir="false" afterPath="$PROJECT_DIR$/TP2/Game.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TP2/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/TP2/Program.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TP2Tests/TestsGame.cs" beforeDir="false" afterPath="$PROJECT_DIR$/TP2Tests/TestsGame.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.TP2_ETU/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.TP2_ETU/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,6 +32,12 @@
     "accountId": "4c0b3a31-127e-4242-8a7b-1a5671034793"
   }
 }]]></component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="mock://C:/Users/jefou/OneDrive/Desktop/TP2-----Intro-Prog-----Card-Game-31/tp2-a2024-majeurbilly/TP2/Game.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/jefou/OneDrive/Desktop/TP2-----Intro-Prog-----Card-Game-31/tp2-a2024-majeurbilly/TP2/Game.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/jefou/OneDrive/Desktop/TP2-----Intro-Prog-----Card-Game-31/tp2-a2024-majeurbilly/TP2/Program.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/jefou/OneDrive/Desktop/TP2-----Intro-Prog-----Card-Game-31/tp2-a2024-majeurbilly/TP2Tests/TestsGame.cs" root0="SKIP_HIGHLIGHTING" />
+  </component>
   <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
   <component name="ProjectColorInfo"><![CDATA[{
   "customColor": "",
@@ -112,8 +115,25 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1731169562217</updated>
-      <workItem from="1731169564333" duration="8503000" />
+      <workItem from="1731169564333" duration="15413000" />
     </task>
+    <task id="LOCAL-00001" summary="check moi ca">
+      <option name="closed" value="true" />
+      <created>1731188913242</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1731188913242</updated>
+    </task>
+    <task id="LOCAL-00002" summary="partie prendre une pause.">
+      <option name="closed" value="true" />
+      <created>1731196843568</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1731196843568</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -123,5 +143,8 @@
   <component name="UnityProjectConfiguration" hasMinimizedUI="false" />
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+    <MESSAGE value="check moi ca" />
+    <MESSAGE value="partie prendre une pause." />
+    <option name="LAST_COMMIT_MESSAGE" value="partie prendre une pause." />
   </component>
 </project>
