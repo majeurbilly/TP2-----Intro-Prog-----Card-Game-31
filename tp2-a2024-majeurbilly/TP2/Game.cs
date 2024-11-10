@@ -24,7 +24,9 @@ namespace TP2
         public const int JACK = 10;
         public const int QUEEN = 11;
         public const int KING = 12;
-
+        
+        public static int[] FACES = { JACK, QUEEN, KING };
+        
         public const int NUM_SUITS = 4;
         public const int NUM_CARDS_PER_SUIT = 13;
         public const int NUM_CARDS = NUM_SUITS * NUM_CARDS_PER_SUIT;
@@ -40,6 +42,7 @@ namespace TP2
         public const int SAME_COLOR_SEQUENCE_SCORE = 28;
         public const int SEQUENCE_SCORE = 26;
         public const int SAME_COLOR_SCORE = 24;
+        
 
         #endregion
 
@@ -136,17 +139,49 @@ namespace TP2
 
         public static bool HasAllFaces(int[] values)
         {
-            throw new NotImplementedException();
+            const int ALL_FACES_SUM = JACK + QUEEN + KING;
+            int counter = 0;
+            for (int i = 0; i < values.Length; i++)
+            {
+                if (!FACES.Contains(GetValueFromCardIndex(values[i])))
+                {
+                    return false;
+                }
+
+                counter += GetValueFromCardIndex(values[i]);
+            }
+
+            if (counter != ALL_FACES_SUM)
+            {
+                return false;
+            }
+            return true;
         }
 
         public static bool HasOnlyFaces(int[] values)
         {
-            throw new NotImplementedException();
+            for (int i = 0; i < values.Length; i++)
+            {
+                if (!FACES.Contains(GetValueFromCardIndex(values[i])))
+                {
+                    return false;
+                }
+                
+            }
+
+            return true;
         }
 
-        public static bool HasSameColorSequence(int[] values, int[] suits)
+        public static bool HasSameColorSequence(int[] values, int[] colors)
         {
-            throw new NotImplementedException();
+            for (int i = 1; i < colors.Length; i++)
+            {
+                if (GetSuitFromCardIndex(values[i]) != colors[i])
+                {
+                    return false;
+                }
+            }
+            return true;
         }
 
         public static bool HasSequence(int[] values)

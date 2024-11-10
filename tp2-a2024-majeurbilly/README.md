@@ -144,18 +144,82 @@ la valeur la plus haute entre les cartes en main
 
 ### la methode retourne:
 - true si les cartes ont tous la meme valeur
-- false si les cartes sont une valeur différente
+- false si les cartes sont d'une valeur différente
+
+
+1 - créé int temp qui représente la premiere carte de la main
+
+2 - boucle for pour inspecter les deux derniere cartes
+
+3 - si temp != false ;
+
+
+---
+#################################
+
+# A tous les visages >> valet dame roi
+## public static bool HasAllFaces(int[] values)
+
+### recoit et retour de la methode
+
+### la methode recoit:
+- une tableau de valeur 
+
+### la methode retourne:
+- true si les cartes sont valet dame roi
+- false si les cartes ne le sont pas
+
+## algo
+1 - créé int[] faces avec les trois faces jack queen king appeler **faces**
+
+2 - créé int allFace jack 11 + queen 12 + king 13 = 36
+
+3 - compteur a 0
+
+4 - boucle for inspecte le tableau de valeur 
+
+5 - si dans le tableau **faces** on ne retrouve pas la valeur de la carte inspecter retourne false car ce nest pas un face
+
+6 - si la cartes inspecter est une face elle est aditionné au compteur
+
+7 - si le compteur n'est pas égale a allFace retourne false
+
+8 - sinon true
 
 
 ---
 #################################
 
 
+# N'a que des visages 
+## public static bool HasOnlyFaces(int[] values)
 
+### recoit et retour de la methode
 
+### la methode recoit:
+- une tableau de valeur
 
+### la methode retourne:
+- true si le tableau de valeur a que des figures
+- false si le talbeau n'a pas que des figures 
 
+## algo
+1 - boule for pour inspecter le tableau de valeur 
 
+2 - si la carte inspecter n'est pas une figure retourne false 
+
+3 - sinon retourne true 
+
+---
+#################################
+
+# A la même séquence de couleurs
+## public static bool HasSameColorSequence(int[] values, int[] suits)
+
+### recoit et retour de la methode
+
+### la methode recoit:
+- un tableau de valeurs et un tableau de couleur
 
 
 
