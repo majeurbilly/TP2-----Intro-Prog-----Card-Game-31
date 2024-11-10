@@ -24,9 +24,9 @@ namespace TP2
         public const int JACK = 10;
         public const int QUEEN = 11;
         public const int KING = 12;
-        
+
         public static int[] FACES = { JACK, QUEEN, KING };
-        
+
         public const int NUM_SUITS = 4;
         public const int NUM_CARDS_PER_SUIT = 13;
         public const int NUM_CARDS = NUM_SUITS * NUM_CARDS_PER_SUIT;
@@ -42,7 +42,6 @@ namespace TP2
         public const int SAME_COLOR_SEQUENCE_SCORE = 28;
         public const int SEQUENCE_SCORE = 26;
         public const int SAME_COLOR_SCORE = 24;
-        
 
         #endregion
 
@@ -53,7 +52,7 @@ namespace TP2
 
         public static int GetValueFromCardIndex(int index)
         {
-            return (index % 13) + 1;
+            return index % 13;
         }
 
         public static void DistributeCard(int[] cardValues, bool[] selectedCards, bool[] availableCards)
@@ -63,13 +62,12 @@ namespace TP2
                 if (selectedCards[i] == false)
                 {
                     int newCarte;
-                    
+
                     do
                     {
                         newCarte = new Random().Next(0, 52);
-
-
                     } while (!availableCards[newCarte]);
+
                     cardValues[i] = newCarte;
                     availableCards[newCarte] = false;
                 }
@@ -78,17 +76,18 @@ namespace TP2
 
         public static int GetScoreFromCardValue(int cardValue)
         {
-            return cardValue % 13;
-        }
-
-        public static int GetHandScore(int[] cardIndexes)
-        {
-            //todo: pas fini 
-            int handScore = 0;
-            int[] handCards = new int[cardIndexes.Length];
-
-
-            return 0;
+            if (cardValue == ACE)
+            {
+                return ACES_SCORE;
+            }
+            else if (FACES.Contains(cardValue))
+            {
+                return FACES_SCORE;
+            }
+            else
+            {
+                return GetValueFromCardIndex(cardValue) + 1;
+            }
         }
 
         public static void ShowScore(int[] cardIndexes)
@@ -101,26 +100,35 @@ namespace TP2
         public static int GetHighestCardValue(int[] cardsValues)
         {
             int highestValue = 0;
-            foreach (int i in cardsValues)
+            for (int i = 0; i < cardsValues.Length; i++)
             {
-                if (cardsValues[i] > highestValue)
+                int cardValue = cardsValues[i];
+                if (cardValue == ACE)
                 {
-                    highestValue = cardsValues[i];
+                    return cardValue;
+                }
+                
+                else if (cardValue > highestValue)
+                {
+                    highestValue = cardValue;
                 }
             }
+            
             return highestValue;
         }
 
-        public static bool HasOnlySameColorCards(int[] cardValues)
+        public static bool HasOnlySameColorCards(int[] colorValues)
         {
-            int temp = GetSuitFromCardIndex(cardValues[0]);
-            for (int i = 1; i < cardValues.Length; i++)
+            int temp = colorValues[0];
+            for (int i = 1; i < colorValues.Length; i++)
             {
-                if (GetSuitFromCardIndex(cardValues[i]) != temp)
+                if (colorValues[i] != temp)
                 {
                     return false;
                 }
+                else if ()
             }
+
             return true;
         }
 
@@ -134,6 +142,7 @@ namespace TP2
                     return false;
                 }
             }
+
             return true;
         }
 
@@ -155,6 +164,7 @@ namespace TP2
             {
                 return false;
             }
+
             return true;
         }
 
@@ -166,7 +176,6 @@ namespace TP2
                 {
                     return false;
                 }
-                
             }
 
             return true;
@@ -174,24 +183,60 @@ namespace TP2
 
         public static bool HasSameColorSequence(int[] values, int[] colors)
         {
-            for (int i = 1; i < colors.Length; i++)
+            for (int i = 0; i < colors.Length; i++)
             {
                 if (GetSuitFromCardIndex(values[i]) != colors[i])
                 {
                     return false;
                 }
             }
+
             return true;
         }
 
         public static bool HasSequence(int[] values)
         {
-            throw new NotImplementedException();
+            for (int i = 0; i < values.Length - 1; i++)
+            {
+                if (values[i] != values[i + 1])
+                {
+                    return false;
+                }
+            }
+
+            return true;
         }
 
         public static int GetScoreFromMultipleCardsOfASuit(int suit, int[] values, int[] suits)
         {
-            throw new NotImplementedException();
+            int counter = 0;
+            for (int i = 0; i < values.Length; i++)
+            {
+                if (GetSuitFromCardIndex(values[i]) == suit)
+                {
+                    counter++;
+                }
+            }
+
+            return counter;
+        }
+
+        public static int GetHandScore(int[] cardIndexes)
+        {
+            int handScore = 0;
+            if (HasOnlySameColorCards(cardIndexes))
+            {
+                for (int i = 0; i < cardIndexes.Length - 1; i++)
+                {
+                    int fris = GetSuitFromCardIndex(cardIndexes[i]);
+                    if (GetSuitFromCardIndex(cardIndexes[i]) == GetSuitFromCardIndex(cardIndexes[i + 1]))
+                    {
+                        handScore += GetValueFromCardIndex(cardIndexes[i]) + GetValueFromCardIndex(cardIndexes[i + 1]);
+                    }
+                }
+            }
+
+            return 0;
         }
     }
 }

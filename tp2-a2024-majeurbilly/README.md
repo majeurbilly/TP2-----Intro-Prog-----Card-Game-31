@@ -14,6 +14,13 @@
 ### algorytme 
 - index de la carte selectionner dans le paquet de 51 index / 13 = un int donc pas de reste.
 
+```c#
+ public static int GetSuitFromCardIndex(int index)
+        {
+            return index / NUM_CARDS_PER_SUIT;
+        }
+```
+
 ---
 
 # Obtenir la valeur à partir de l'index de la carte
@@ -21,8 +28,14 @@
 
 - la methode retourne la valeur de la carte de 1 a 13
 
-- en fessant index % 13 j'obtiens une valeur entre 0 et 12 (+1 et j'obtient 1 a 13 pour les 51 index || 52 cartes)
+- en fessant index % 13 j'obtiens une valeur entre 0 et 12 d'une carte dans le jeu de carte. 0 etant l'ass et le 12 le roi
 
+```c#
+  public static int GetValueFromCardIndex(int index)
+        {
+            return index % 13;
+        }
+```
 ---
 #################################
 
@@ -65,6 +78,65 @@ rien (void)
 3 - si la carte est a false, une 4eme carte est créé et est rajouter dans le jeu. un fois que la 4eme carte prendre la place
   de la carte a échanger celle-ci redevient disponible dans le jeu.
 
+```c#
+ public static void DistributeCard(int[] cardValues, bool[] selectedCards, bool[] availableCards)
+        {
+            for (int i = 0; i < selectedCards.Length; i++)
+            {
+                if (selectedCards[i] == false)
+                {
+                    int newCarte;
+
+                    do
+                    {
+                        newCarte = new Random().Next(0, 52);
+                    } while (!availableCards[newCarte]);
+
+                    cardValues[i] = newCarte;
+                    availableCards[newCarte] = false;
+                }
+            }
+        }
+```
+---
+#################################
+
+# Obtenez le score  à partir de la valeur de la carte
+## public static int GetScoreFromCardValue(int cardValue)
+
+### recoit et retour de la methode
+
+### la methode recoit:
+- la valeur de la carte = cardValue
+
+### et la methode retourne :
+- la valeur du score de la carte
+
+## algo
+- si cest un ass retourne 11
+
+- sinon si le tableau de faces contient la face la valeur de la carte retourne 10
+
+- sinon cest une carte entre 2 et 10 inclu. donc la valeur de la carte plus 1 correspont a sa valeur score
+
+```c#
+       public static int GetScoreFromCardValue(int cardValue)
+        {
+            if (cardValue == ACE)
+            {
+                return ACES_SCORE;
+            }
+            else if (FACES.Contains(cardValue))
+            {
+                return FACES_SCORE;
+            }
+            else
+            {
+                return GetValueFromCardIndex(cardValue) + 1;
+            }
+        }
+```
+
 ---
 #################################
 
@@ -75,13 +147,22 @@ rien (void)
 
 ### la methode recoit: 
 - int[] cardIndexes qui est l'index des carte en main
-C
+- 
+### et la methode retourne :
 rien (void)
 
 ## algo
 1 - la variable int hand = GetHandScore(cardIndexes) acceuil les points
 que le joueur a en main
 2 - WriteLine les points
+
+```c#
+        public static void ShowScore(int[] cardIndexes)
+        {
+            int hand = GetHandScore(cardIndexes);
+            Display.WriteString($"Votre score est de : {hand}", 0, Display.CARD_HEIGHT + 14, ConsoleColor.Black);
+        }
+```
 
 ---
 #################################
@@ -98,15 +179,41 @@ que le joueur a en main
 la valeur la plus haute entre les cartes en main 
 
 ## algo
-1 - créé int highestValue = 0
+- créé int highestValue = 0
 
-2 - foreach int i in cardsValue
+- pour le nombre de valeur des cartes
 
-3- si cardsValues[i] > highestValue
+- crée un int cardValue qui contient la carte que je veux inspecter
 
-4 - highestValue = cardsValues[i];
+- si cardValue == un ass retourne la valeur de la carte
 
-5 - return highestValue;
+- sinon si la valeur de la carte inspecter est plus grande que highestValue
+
+- highestValue stock la carte inspecté
+
+- return highestValue;
+
+```c#
+        public static int GetHighestCardValue(int[] cardsValues)
+        {
+            int highestValue = 0;
+            for (int i = 0; i < cardsValues.Length; i++)
+            {
+                int cardValue = cardsValues[i];
+                if (cardValue == ACE)
+                {
+                    return cardValue;
+                }
+                
+                else if (cardValue > highestValue)
+                {
+                    highestValue = cardValue;
+                }
+            }
+            
+            return highestValue;
+        }
+```
 
 ---
 #################################
@@ -130,6 +237,23 @@ la valeur la plus haute entre les cartes en main
 
 3 - si temp != false ;
 
+```c#
+        public static bool HasOnlySameColorCards(int[] colorValues)
+        {
+            int temp = colorValues[0];
+            int[] red = { HEART, DIAMOND };
+            int[] black = { DIAMOND, SPADE };
+            for (int i = 1; i < colorValues.Length; i++)
+            {
+                if (colorValues[i] != temp)
+                {
+                    return false;
+                }
+            }
+
+            return true;
+        }
+```
 
 ---
 #################################
@@ -152,6 +276,22 @@ la valeur la plus haute entre les cartes en main
 2 - boucle for pour inspecter les deux derniere cartes
 
 3 - si temp != false ;
+
+```c#
+        public static bool HasAllSameCardValues(int[] cardValues)
+        {
+            int temp = GetValueFromCardIndex(cardValues[0]);
+            for (int i = 1; i < cardValues.Length; i++)
+            {
+                if (GetValueFromCardIndex(cardValues[i]) != temp)
+                {
+                    return false;
+                }
+            }
+
+            return true;
+        }
+```
 
 
 ---
@@ -187,6 +327,30 @@ la valeur la plus haute entre les cartes en main
 8 - sinon true
 
 
+```c#
+        public static bool HasAllFaces(int[] values)
+        {
+            const int ALL_FACES_SUM = JACK + QUEEN + KING;
+            int counter = 0;
+            for (int i = 0; i < values.Length; i++)
+            {
+                if (!FACES.Contains(GetValueFromCardIndex(values[i])))
+                {
+                    return false;
+                }
+
+                counter += GetValueFromCardIndex(values[i]);
+            }
+
+            if (counter != ALL_FACES_SUM)
+            {
+                return false;
+            }
+
+            return true;
+        }
+```
+
 ---
 #################################
 
@@ -210,6 +374,22 @@ la valeur la plus haute entre les cartes en main
 
 3 - sinon retourne true 
 
+
+```c#
+         public static bool HasOnlyFaces(int[] values)
+        {
+            for (int i = 0; i < values.Length; i++)
+            {
+                if (!FACES.Contains(GetValueFromCardIndex(values[i])))
+                {
+                    return false;
+                }
+            }
+
+            return true;
+        }
+```
+
 ---
 #################################
 
@@ -220,6 +400,171 @@ la valeur la plus haute entre les cartes en main
 
 ### la methode recoit:
 - un tableau de valeurs et un tableau de couleur
+
+### la methode retourne:
+- true si le tableau de valeur est pareil que le tableau de couleur 
+- false si ce nest pas le cas
+
+## algo
+- boucle for pour inspecter chaques couleurs
+
+- si la couleur des la carte 1 != a la couleur inspeccter retourne false
+
+- sinon retourne true
+
+```c#
+        public static bool HasSameColorSequence(int[] values, int[] colors)
+        {
+            for (int i = 0; i < colors.Length; i++)
+            {
+                if (GetSuitFromCardIndex(values[i]) != colors[i])
+                {
+                    return false;
+                }
+            }
+```
+
+---
+#################################
+
+
+# Avoir une séquence
+## public static bool HasSequence(int[] values)
+
+### recoit et retour de la methode
+
+### la methode recoit:
+- une tableau de valeur 
+
+### la methode retourne:
+- true si les éléments dans le tableau sont une suite
+
+## algo
+
+- boule for pour inspecter le tableau de valeur - 1 pour ne pas inspecter la derniere carte
+
+- si l'élément 1 != a l'élement 2 retourne false
+
+- si l'élément 2 != a l'élement 3 retourne false
+
+- sinon retourne true car 1+1 = 2 && 2+1 = 3 
+
+```c#
+        public static bool HasSequence(int[] values)
+        {
+            for (int i = 0; i < values.Length - 1; i++)
+            {
+                if (values[i] != values[i + 1])
+                {
+                    return false;
+                }
+            }
+
+            return true;
+        }
+```
+
+---
+#################################
+
+# Obtenez le score de plusieurs cartes d'une même couleur
+##  public static int GetScoreFromMultipleCardsOfASuit(int suit, int[] values, int[] suits)
+
+### recoit et retour de la methode
+
+### la methode recoit:
+- un nombre représentant la couleur de la carte
+- un tableau avec les valeurs contenu dans la main du joeur
+- et un tableau de la suit de couleur contenu dans la main du joeur
+
+### la methode retourne:
+- int = score des cartes de la meme couleur additionner
+
+## algo
+- créé compteur pour compter les carte de la couleur spécifique
+
+- boucle for pour inpecter les carte de la main
+
+- si la cartes est de la meme couleur que la couleur spécifique rechercher addtionne au compteur 
+
+```c#
+        public static int GetScoreFromMultipleCardsOfASuit(int suit, int[] values, int[] suits)
+        {
+            int counter = 0;
+            for (int i = 0; i < values.Length; i++)
+            {
+                if (GetSuitFromCardIndex(values[i]) == suit)
+                {
+                    counter++;
+                }
+            }
+
+            return counter;
+        }
+```
+
+
+---
+#################################
+FINIAL
+#################################
+
+# Obtenir le score de la main
+## public static int GetHandScore(int[] cardIndexes)
+
+### recoit et retour de la methode
+
+### la methode recoit:
+- un tableau d'entier comportant index des cartes de la main
+
+### la methode retourne:
+- un nombre entier qui est le score du joueur selon est regle du 31
+
+## algo
+- créé int handScore = 0 ;
+- if (HasOnlySameColorCards)
+-  boucle for pour inspecter la main 
+- additionner la valeur de la cartee dans le handScore
+
+```c#
+        public static int GetHandScore(int[] cardIndexes)
+        {
+            int handScore = 0;
+            if (HasOnlySameColorCards(cardIndexes))
+            {
+                for (int i = 0; i < cardIndexes.Length - 1; i++)
+                {
+                    int fris = GetSuitFromCardIndex(cardIndexes[i]);
+                    if (GetSuitFromCardIndex(cardIndexes[i]) == GetSuitFromCardIndex(cardIndexes[i + 1]))
+                    {
+                        handScore += GetValueFromCardIndex(cardIndexes[i]) + GetValueFromCardIndex(cardIndexes[i + 1]);
+                    }
+                }
+            }
+
+            return 0;
+        }
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
