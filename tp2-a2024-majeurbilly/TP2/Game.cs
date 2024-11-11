@@ -221,7 +221,7 @@ namespace TP2
             }
 
 
-            if (isRed && isBlack || !HasSequence(values))
+            if (isRed && isBlack)
             {
                 return false;
             }
@@ -243,11 +243,19 @@ namespace TP2
             return counter;
         }
 
+        public static int[] PutCardInOrder(int[] values)
+        {
+            int[] arrayOrder = values;
+            Array.Sort(arrayOrder);
+            return arrayOrder;
+        }
+
         public static bool HasSequence(int[] values)
         {
             for (int i = 0; i < values.Length - 1; i++)
             {
-                if (values[i] > values[i + 1])
+                int[] arrayOrder = PutCardInOrder(values);
+                if (arrayOrder[i] + 1 != arrayOrder[i + 1])
                 {
                     return false;
                 }

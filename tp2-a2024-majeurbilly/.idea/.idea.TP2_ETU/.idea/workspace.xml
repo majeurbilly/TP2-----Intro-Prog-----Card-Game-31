@@ -11,38 +11,46 @@
   <component name="ChangeListManager">
     <list default="true" id="d65d18a7-ed17-4e85-ac2b-0c0ade5a7d87" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.TP2_ETU/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.TP2_ETU/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TP2/Game.cs" beforeDir="false" afterPath="$PROJECT_DIR$/TP2/Game.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TP2/obj/Debug/net6.0-windows/TP2.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/TP2/obj/Debug/net6.0-windows/TP2.AssemblyInfo.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TP2/obj/Debug/net6.0-windows/TP2.sourcelink.json" beforeDir="false" afterPath="$PROJECT_DIR$/TP2/obj/Debug/net6.0-windows/TP2.sourcelink.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TP2/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/TP2/obj/rider.project.restore.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TP2Tests/obj/Debug/net6.0-windows/TP2Tests.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/TP2Tests/obj/Debug/net6.0-windows/TP2Tests.AssemblyInfo.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TP2Tests/obj/Debug/net6.0-windows/TP2Tests.sourcelink.json" beforeDir="false" afterPath="$PROJECT_DIR$/TP2Tests/obj/Debug/net6.0-windows/TP2Tests.sourcelink.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TP2Tests/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/TP2Tests/obj/rider.project.restore.info" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="DpaMonitoringSettings">
+    <option name="autoShow" value="false" />
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN",
-    "assignee": "majeurbilly"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;majeurbilly&quot;
   }
-}]]></component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/majeurbilly/TP2-----Intro-Prog-----Card-Game-31.git",
-    "accountId": "4c0b3a31-127e-4242-8a7b-1a5671034793"
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/majeurbilly/TP2-----Intro-Prog-----Card-Game-31.git&quot;,
+    &quot;accountId&quot;: &quot;4c0b3a31-127e-4242-8a7b-1a5671034793&quot;
   }
-}]]></component>
+}</component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="mock://C:/Users/jefou/OneDrive/Desktop/TP2-----Intro-Prog-----Card-Game-31/tp2-a2024-majeurbilly/TP2/Game.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/jefou/OneDrive/Desktop/TP2-----Intro-Prog-----Card-Game-31/tp2-a2024-majeurbilly/TP2/Game.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/jefou/OneDrive/Desktop/TP2-----Intro-Prog-----Card-Game-31/tp2-a2024-majeurbilly/TP2/Program.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/jefou/OneDrive/Desktop/TP2-----Intro-Prog-----Card-Game-31/tp2-a2024-majeurbilly/TP2Tests/TestsGame.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/8517f607c12a4b508364c3f896f0fe6f11da8/b6/730d18ab/Assert.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/56996bd5b7b025988834f7db72d610de6637f12f9a6dc6f25950f7f158ef3fc4/ConsolePal.Windows.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
-  <component name="ProjectColorInfo"><![CDATA[{
-  "customColor": "",
-  "associatedIndex": 5
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 5
+}</component>
   <component name="ProjectId" id="2ocWtjjtKuZxgixIx5KiJNYHdbn" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -50,7 +58,12 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    ".NET Launch Settings Profile.TP2.executor": "Debug",
+    "135269e9-aee1-432a-bdac-48163f9d9dbb.executor": "Debug",
+    "2f3d3b97-2c8f-46a3-9514-c5244b5a15ef.executor": "Debug",
+    "85486e7a-bb32-45a2-af35-9420e272052c.executor": "Debug",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "b9f9b865-c1b7-4a19-aa49-598fe8410338.executor": "Debug",
     "git-widget-placeholder": "main",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -116,6 +129,9 @@
       <option name="presentableId" value="Default" />
       <updated>1731169562217</updated>
       <workItem from="1731169564333" duration="15413000" />
+      <workItem from="1731247075445" duration="21240000" />
+      <workItem from="1731276535939" duration="7070000" />
+      <workItem from="1731286392053" duration="2762000" />
     </task>
     <task id="LOCAL-00001" summary="check moi ca">
       <option name="closed" value="true" />
@@ -133,7 +149,23 @@
       <option name="project" value="LOCAL" />
       <updated>1731196843568</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="pause / aller dehors">
+      <option name="closed" value="true" />
+      <created>1731271736418</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1731271736418</updated>
+    </task>
+    <task id="LOCAL-00004" summary="GetScoreFromMultipleCardsOfASuit 😡">
+      <option name="closed" value="true" />
+      <created>1731283641781</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1731283641781</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -145,6 +177,157 @@
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
     <MESSAGE value="check moi ca" />
     <MESSAGE value="partie prendre une pause." />
-    <option name="LAST_COMMIT_MESSAGE" value="partie prendre une pause." />
+    <MESSAGE value="pause / aller dehors" />
+    <MESSAGE value="GetScoreFromMultipleCardsOfASuit " />
+    <option name="LAST_COMMIT_MESSAGE" value="GetScoreFromMultipleCardsOfASuit " />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/TP2/Game.cs</url>
+          <line>78</line>
+          <properties documentPath="C:\Users\jefou\OneDrive\Desktop\TP2-----Intro-Prog-----Card-Game-31\tp2-a2024-majeurbilly\TP2\Game.cs" containingFunctionPresentation="Method 'GetScoreFromCardValue'">
+            <startOffsets>
+              <option value="2328" />
+            </startOffsets>
+            <endOffsets>
+              <option value="2349" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/TP2/Game.cs</url>
+          <line>100</line>
+          <properties documentPath="C:\Users\jefou\OneDrive\Desktop\TP2-----Intro-Prog-----Card-Game-31\tp2-a2024-majeurbilly\TP2\Game.cs" containingFunctionPresentation="Method 'GetHighestCardValue'">
+            <startOffsets>
+              <option value="2957" />
+            </startOffsets>
+            <endOffsets>
+              <option value="2958" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/TP2/Game.cs</url>
+          <line>117</line>
+          <properties documentPath="C:\Users\jefou\OneDrive\Desktop\TP2-----Intro-Prog-----Card-Game-31\tp2-a2024-majeurbilly\TP2\Game.cs" containingFunctionPresentation="Method 'GetHighestCardValue'">
+            <startOffsets>
+              <option value="3414" />
+            </startOffsets>
+            <endOffsets>
+              <option value="3415" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/TP2Tests/TestsGame.cs</url>
+          <line>18</line>
+          <properties documentPath="C:\Users\jefou\OneDrive\Desktop\TP2-----Intro-Prog-----Card-Game-31\tp2-a2024-majeurbilly\TP2Tests\TestsGame.cs" containingFunctionPresentation="Method 'CanGetNormalCardScore'">
+            <startOffsets>
+              <option value="500" />
+            </startOffsets>
+            <endOffsets>
+              <option value="550" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/TP2Tests/TestsGame.cs</url>
+          <line>492</line>
+          <properties documentPath="C:\Users\jefou\OneDrive\Desktop\TP2-----Intro-Prog-----Card-Game-31\tp2-a2024-majeurbilly\TP2Tests\TestsGame.cs" containingFunctionPresentation="Method 'ShouldGet0WhenTargetSuitNotInSuits'">
+            <startOffsets>
+              <option value="11189" />
+            </startOffsets>
+            <endOffsets>
+              <option value="11190" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="13" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/TP2Tests/TestsGame.cs</url>
+          <line>511</line>
+          <properties documentPath="C:\Users\jefou\OneDrive\Desktop\TP2-----Intro-Prog-----Card-Game-31\tp2-a2024-majeurbilly\TP2Tests\TestsGame.cs" containingFunctionPresentation="Method 'ShouldGetRightScoreWithOneCardFromTargetSuit'">
+            <startOffsets>
+              <option value="11657" />
+            </startOffsets>
+            <endOffsets>
+              <option value="11658" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="14" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/TP2Tests/TestsGame.cs</url>
+          <line>522</line>
+          <properties documentPath="C:\Users\jefou\OneDrive\Desktop\TP2-----Intro-Prog-----Card-Game-31\tp2-a2024-majeurbilly\TP2Tests\TestsGame.cs" containingFunctionPresentation="Method 'ShouldGetRightScoreWithOneCardFromTargetSuit'">
+            <startOffsets>
+              <option value="11904" />
+            </startOffsets>
+            <endOffsets>
+              <option value="11975" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="15" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/TP2Tests/TestsGame.cs</url>
+          <line>484</line>
+          <properties documentPath="C:\Users\jefou\OneDrive\Desktop\TP2-----Intro-Prog-----Card-Game-31\tp2-a2024-majeurbilly\TP2Tests\TestsGame.cs" containingFunctionPresentation="Method 'CanFindSequenceNotInOrder'">
+            <startOffsets>
+              <option value="11016" />
+            </startOffsets>
+            <endOffsets>
+              <option value="11060" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="18" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/TP2Tests/TestsGame.cs</url>
+          <line>404</line>
+          <properties documentPath="C:\Users\jefou\OneDrive\Desktop\TP2-----Intro-Prog-----Card-Game-31\tp2-a2024-majeurbilly\TP2Tests\TestsGame.cs" containingFunctionPresentation="Method 'CanFindSameColorSequenceIfPresent'">
+            <startOffsets>
+              <option value="9335" />
+            </startOffsets>
+            <endOffsets>
+              <option value="9404" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="19" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/TP2Tests/TestsGame.cs</url>
+          <line>388</line>
+          <properties documentPath="C:\Users\jefou\OneDrive\Desktop\TP2-----Intro-Prog-----Card-Game-31\tp2-a2024-majeurbilly\TP2Tests\TestsGame.cs" containingFunctionPresentation="Method 'CantFindSameColorSequenceIfOnlySameColorPresent'">
+            <startOffsets>
+              <option value="8917" />
+            </startOffsets>
+            <endOffsets>
+              <option value="8986" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="20" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/TP2Tests/TestsGame.cs</url>
+          <line>432</line>
+          <properties documentPath="C:\Users\jefou\OneDrive\Desktop\TP2-----Intro-Prog-----Card-Game-31\tp2-a2024-majeurbilly\TP2Tests\TestsGame.cs" containingFunctionPresentation="Method 'CanFindSequenceIfPresent'">
+            <startOffsets>
+              <option value="9911" />
+            </startOffsets>
+            <endOffsets>
+              <option value="9955" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="21" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
