@@ -11,13 +11,6 @@
   <component name="ChangeListManager">
     <list default="true" id="d65d18a7-ed17-4e85-ac2b-0c0ade5a7d87" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.TP2_ETU/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.TP2_ETU/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TP2/Game.cs" beforeDir="false" afterPath="$PROJECT_DIR$/TP2/Game.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TP2/obj/Debug/net6.0-windows/TP2.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/TP2/obj/Debug/net6.0-windows/TP2.AssemblyInfo.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TP2/obj/Debug/net6.0-windows/TP2.sourcelink.json" beforeDir="false" afterPath="$PROJECT_DIR$/TP2/obj/Debug/net6.0-windows/TP2.sourcelink.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TP2/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/TP2/obj/rider.project.restore.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TP2Tests/obj/Debug/net6.0-windows/TP2Tests.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/TP2Tests/obj/Debug/net6.0-windows/TP2Tests.AssemblyInfo.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TP2Tests/obj/Debug/net6.0-windows/TP2Tests.sourcelink.json" beforeDir="false" afterPath="$PROJECT_DIR$/TP2Tests/obj/Debug/net6.0-windows/TP2Tests.sourcelink.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TP2Tests/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/TP2Tests/obj/rider.project.restore.info" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,6 +38,11 @@
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/8517f607c12a4b508364c3f896f0fe6f11da8/b6/730d18ab/Assert.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/56996bd5b7b025988834f7db72d610de6637f12f9a6dc6f25950f7f158ef3fc4/ConsolePal.Windows.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/jefou/OneDrive/Desktop/TP2-----Intro-Prog-----Card-Game-31/tp2-a2024-majeurbilly/TP2/Game.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/jefou/OneDrive/Desktop/TP2-----Intro-Prog-----Card-Game-31/tp2-a2024-majeurbilly/TP2/obj/Debug/net6.0-windows/TP2.AssemblyInfo.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/jefou/OneDrive/Desktop/TP2-----Intro-Prog-----Card-Game-31/tp2-a2024-majeurbilly/TP2/obj/Debug/net6.0-windows/TP2.sourcelink.json" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/jefou/OneDrive/Desktop/TP2-----Intro-Prog-----Card-Game-31/tp2-a2024-majeurbilly/TP2Tests/obj/Debug/net6.0-windows/TP2Tests.AssemblyInfo.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/jefou/OneDrive/Desktop/TP2-----Intro-Prog-----Card-Game-31/tp2-a2024-majeurbilly/TP2Tests/obj/Debug/net6.0-windows/TP2Tests.sourcelink.json" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
   <component name="ProjectColorInfo">{
@@ -131,7 +129,7 @@
       <workItem from="1731169564333" duration="15413000" />
       <workItem from="1731247075445" duration="21240000" />
       <workItem from="1731276535939" duration="7070000" />
-      <workItem from="1731286392053" duration="2762000" />
+      <workItem from="1731286392053" duration="4255000" />
     </task>
     <task id="LOCAL-00001" summary="check moi ca">
       <option name="closed" value="true" />
@@ -165,7 +163,15 @@
       <option name="project" value="LOCAL" />
       <updated>1731283641781</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="zzz">
+      <option name="closed" value="true" />
+      <created>1731290582829</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1731290582829</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -179,7 +185,8 @@
     <MESSAGE value="partie prendre une pause." />
     <MESSAGE value="pause / aller dehors" />
     <MESSAGE value="GetScoreFromMultipleCardsOfASuit " />
-    <option name="LAST_COMMIT_MESSAGE" value="GetScoreFromMultipleCardsOfASuit " />
+    <MESSAGE value="zzz" />
+    <option name="LAST_COMMIT_MESSAGE" value="zzz" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
