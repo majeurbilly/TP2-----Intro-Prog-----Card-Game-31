@@ -24,7 +24,7 @@ namespace TP2
         public const int JACK = 10;
         public const int QUEEN = 11;
         public const int KING = 12;
-        public const int NEW_ACE_VALUE = 13;
+        public const int NEW_ACE_VALUE = 1;
 
         public static int[] FACES = { JACK, QUEEN, KING };
 
@@ -203,11 +203,18 @@ namespace TP2
 
         public static int[] SwitchAceValues(int[] cardValues)
         {
-            for (int i = 0; i < cardValues.Length; i++)
+            bool permutation = true;
+            while (permutation)
             {
-                if (cardValues[i] == ACE)
+                permutation = false;
+                for (int i = 0; i < cardValues.Length; i++)
                 {
-                    cardValues[i] = NEW_ACE_VALUE;
+                    int additionArray;
+                    if (cardValues[i] == ACE)
+                    {
+                        cardValues[i] = NEW_ACE_VALUE;
+                        permutation = true;
+                    }
                 }
             }
 
@@ -235,9 +242,9 @@ namespace TP2
             }
 
             int[] arrayEnOrdre = PutCardInOrder(values);
-            int[] arrayWithAceValue = SwitchAceValues(arrayEnOrdre);
+            // int[] arrayWithAceValue = SwitchAceValues(arrayEnOrdre);
 
-            if (isRed && isBlack && !HasSequence(arrayWithAceValue))
+            if ((isRed && isBlack)|| !HasSequence(arrayEnOrdre))
             {
                 return false;
             }
@@ -247,22 +254,22 @@ namespace TP2
 
         public static int GetScoreFromMultipleCardsOfASuit(int suit, int[] values, int[] suits)
         {
-            int counter = 0;
+            int temp = 0;
             for (int i = 0; i < values.Length; i++)
             {
                 if (suits[i] == suit)
                 {
-                    counter++;
+                    temp = GetScoreFromCardValue(values[i]);
                 }
             }
 
-            return counter;
+            return temp;
         }
 
         public static int[] PutCardInOrder(int[] values)
         {
             bool permutation = true;
-            while (permutation == true)
+            while (permutation)
             {
                 permutation = false;
                 for (int i = 0; i < values.Length - 1; i++)
