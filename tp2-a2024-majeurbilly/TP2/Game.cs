@@ -24,6 +24,7 @@ namespace TP2
         public const int JACK = 10;
         public const int QUEEN = 11;
         public const int KING = 12;
+        public const int NEW_ACE_VALUE = 13;
 
         public static int[] FACES = { JACK, QUEEN, KING };
 
@@ -200,6 +201,19 @@ namespace TP2
             return true;
         }
 
+        public static int[] SwitchAceValues(int[] cardValues)
+        {
+            for (int i = 0; i < cardValues.Length; i++)
+            {
+                if (cardValues[i] == ACE)
+                {
+                    cardValues[i] = NEW_ACE_VALUE;
+                }
+            }
+
+            return cardValues;
+        }
+
         public static bool HasSameColorSequence(int[] values, int[] colors)
         {
             bool isRed = false;
@@ -220,8 +234,10 @@ namespace TP2
                 }
             }
 
+            int[] arrayEnOrdre = PutCardInOrder(values);
+            int[] arrayWithAceValue = SwitchAceValues(arrayEnOrdre);
 
-            if (isRed && isBlack)
+            if (isRed && isBlack && !HasSequence(arrayWithAceValue))
             {
                 return false;
             }
@@ -245,9 +261,24 @@ namespace TP2
 
         public static int[] PutCardInOrder(int[] values)
         {
-            int[] arrayOrder = values;
-            Array.Sort(arrayOrder);
-            return arrayOrder;
+            bool permutation = true;
+            while (permutation == true)
+            {
+                permutation = false;
+                for (int i = 0; i < values.Length - 1; i++)
+                {
+                    int temp = 0;
+                    if (values[i] > values[i + 1])
+                    {
+                        temp += values[i];
+                        values[i] = values[i + 1];
+                        values[i + 1] = temp;
+                        permutation = true;
+                    }
+                }
+            }
+
+            return values;
         }
 
         public static bool HasSequence(int[] values)
@@ -260,6 +291,7 @@ namespace TP2
                     return false;
                 }
             }
+
             return true;
         }
 

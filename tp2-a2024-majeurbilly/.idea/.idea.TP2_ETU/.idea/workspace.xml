@@ -11,6 +11,11 @@
   <component name="ChangeListManager">
     <list default="true" id="d65d18a7-ed17-4e85-ac2b-0c0ade5a7d87" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.TP2_ETU/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.TP2_ETU/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TP2/Game.cs" beforeDir="false" afterPath="$PROJECT_DIR$/TP2/Game.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TP2/obj/Debug/net6.0-windows/TP2.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/TP2/obj/Debug/net6.0-windows/TP2.AssemblyInfo.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TP2/obj/Debug/net6.0-windows/TP2.sourcelink.json" beforeDir="false" afterPath="$PROJECT_DIR$/TP2/obj/Debug/net6.0-windows/TP2.sourcelink.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TP2Tests/obj/Debug/net6.0-windows/TP2Tests.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/TP2Tests/obj/Debug/net6.0-windows/TP2Tests.AssemblyInfo.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TP2Tests/obj/Debug/net6.0-windows/TP2Tests.sourcelink.json" beforeDir="false" afterPath="$PROJECT_DIR$/TP2Tests/obj/Debug/net6.0-windows/TP2Tests.sourcelink.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,11 +43,6 @@
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/8517f607c12a4b508364c3f896f0fe6f11da8/b6/730d18ab/Assert.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/56996bd5b7b025988834f7db72d610de6637f12f9a6dc6f25950f7f158ef3fc4/ConsolePal.Windows.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/jefou/OneDrive/Desktop/TP2-----Intro-Prog-----Card-Game-31/tp2-a2024-majeurbilly/TP2/Game.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/jefou/OneDrive/Desktop/TP2-----Intro-Prog-----Card-Game-31/tp2-a2024-majeurbilly/TP2/obj/Debug/net6.0-windows/TP2.AssemblyInfo.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/jefou/OneDrive/Desktop/TP2-----Intro-Prog-----Card-Game-31/tp2-a2024-majeurbilly/TP2/obj/Debug/net6.0-windows/TP2.sourcelink.json" root0="FORCE_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/jefou/OneDrive/Desktop/TP2-----Intro-Prog-----Card-Game-31/tp2-a2024-majeurbilly/TP2Tests/obj/Debug/net6.0-windows/TP2Tests.AssemblyInfo.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/jefou/OneDrive/Desktop/TP2-----Intro-Prog-----Card-Game-31/tp2-a2024-majeurbilly/TP2Tests/obj/Debug/net6.0-windows/TP2Tests.sourcelink.json" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
   <component name="ProjectColorInfo">{
@@ -59,8 +59,10 @@
     ".NET Launch Settings Profile.TP2.executor": "Debug",
     "135269e9-aee1-432a-bdac-48163f9d9dbb.executor": "Debug",
     "2f3d3b97-2c8f-46a3-9514-c5244b5a15ef.executor": "Debug",
+    "7d646aa9-d574-49da-8dfc-7e6bbc17a066.executor": "Debug",
     "85486e7a-bb32-45a2-af35-9420e272052c.executor": "Debug",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "XThreadsFramesViewSplitterKey": "0.7729941",
     "b9f9b865-c1b7-4a19-aa49-598fe8410338.executor": "Debug",
     "git-widget-placeholder": "main",
     "node.js.detected.package.eslint": "true",
@@ -130,6 +132,8 @@
       <workItem from="1731247075445" duration="21240000" />
       <workItem from="1731276535939" duration="7070000" />
       <workItem from="1731286392053" duration="4255000" />
+      <workItem from="1731335585466" duration="1525000" />
+      <workItem from="1731361368785" duration="3813000" />
     </task>
     <task id="LOCAL-00001" summary="check moi ca">
       <option name="closed" value="true" />
@@ -193,39 +197,39 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/TP2/Game.cs</url>
-          <line>78</line>
+          <line>79</line>
           <properties documentPath="C:\Users\jefou\OneDrive\Desktop\TP2-----Intro-Prog-----Card-Game-31\tp2-a2024-majeurbilly\TP2\Game.cs" containingFunctionPresentation="Method 'GetScoreFromCardValue'">
             <startOffsets>
-              <option value="2328" />
+              <option value="2373" />
             </startOffsets>
             <endOffsets>
-              <option value="2349" />
+              <option value="2394" />
             </endOffsets>
           </properties>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/TP2/Game.cs</url>
-          <line>100</line>
+          <line>101</line>
           <properties documentPath="C:\Users\jefou\OneDrive\Desktop\TP2-----Intro-Prog-----Card-Game-31\tp2-a2024-majeurbilly\TP2\Game.cs" containingFunctionPresentation="Method 'GetHighestCardValue'">
             <startOffsets>
-              <option value="2957" />
+              <option value="3002" />
             </startOffsets>
             <endOffsets>
-              <option value="2958" />
+              <option value="3003" />
             </endOffsets>
           </properties>
           <option name="timeStamp" value="3" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/TP2/Game.cs</url>
-          <line>117</line>
+          <line>118</line>
           <properties documentPath="C:\Users\jefou\OneDrive\Desktop\TP2-----Intro-Prog-----Card-Game-31\tp2-a2024-majeurbilly\TP2\Game.cs" containingFunctionPresentation="Method 'GetHighestCardValue'">
             <startOffsets>
-              <option value="3414" />
+              <option value="3459" />
             </startOffsets>
             <endOffsets>
-              <option value="3415" />
+              <option value="3460" />
             </endOffsets>
           </properties>
           <option name="timeStamp" value="5" />
@@ -242,19 +246,6 @@
             </endOffsets>
           </properties>
           <option name="timeStamp" value="6" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/TP2Tests/TestsGame.cs</url>
-          <line>492</line>
-          <properties documentPath="C:\Users\jefou\OneDrive\Desktop\TP2-----Intro-Prog-----Card-Game-31\tp2-a2024-majeurbilly\TP2Tests\TestsGame.cs" containingFunctionPresentation="Method 'ShouldGet0WhenTargetSuitNotInSuits'">
-            <startOffsets>
-              <option value="11189" />
-            </startOffsets>
-            <endOffsets>
-              <option value="11190" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="13" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/TP2Tests/TestsGame.cs</url>
@@ -333,6 +324,19 @@
             </endOffsets>
           </properties>
           <option name="timeStamp" value="21" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/TP2/Game.cs</url>
+          <line>287</line>
+          <properties documentPath="C:\Users\jefou\OneDrive\Desktop\TP2-----Intro-Prog-----Card-Game-31\tp2-a2024-majeurbilly\TP2\Game.cs" containingFunctionPresentation="Method 'HasSequence'">
+            <startOffsets>
+              <option value="7868" />
+            </startOffsets>
+            <endOffsets>
+              <option value="7910" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="22" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
