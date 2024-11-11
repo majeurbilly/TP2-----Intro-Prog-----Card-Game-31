@@ -107,26 +107,45 @@ namespace TP2
                 {
                     return cardValue;
                 }
-                
+
                 else if (cardValue > highestValue)
                 {
                     highestValue = cardValue;
                 }
             }
-            
+
             return highestValue;
         }
 
         public static bool HasOnlySameColorCards(int[] colorValues)
         {
-            int temp = colorValues[0];
-            for (int i = 1; i < colorValues.Length; i++)
+            bool isRed = false;
+            bool isBlack = false;
+
+            for (int i = 0; i < colorValues.Length; i++)
             {
-                if (colorValues[i] != temp)
+                int[] redCard = { HEART, DIAMOND };
+
+                if (colorValues[i] > CLUB)
                 {
                     return false;
                 }
-                else if ()
+
+                {
+                }
+                if (redCard.Contains(colorValues[i]))
+                {
+                    isRed = true;
+                }
+                else
+                {
+                    isBlack = true;
+                }
+            }
+
+            if (isRed && isBlack)
+            {
+                return false;
             }
 
             return true;
@@ -183,25 +202,28 @@ namespace TP2
 
         public static bool HasSameColorSequence(int[] values, int[] colors)
         {
+            bool isRed = false;
+            bool isBlack = false;
             for (int i = 0; i < colors.Length; i++)
             {
-                if (GetSuitFromCardIndex(values[i]) != colors[i])
+                if (colors[i] > CLUB)
                 {
                     return false;
+                }
+                else if (colors[i] <= DIAMOND)
+                {
+                    isRed = true;
+                }
+                else
+                {
+                    isBlack = true;
                 }
             }
 
-            return true;
-        }
 
-        public static bool HasSequence(int[] values)
-        {
-            for (int i = 0; i < values.Length - 1; i++)
+            if (isRed && isBlack || !HasSequence(values))
             {
-                if (values[i] != values[i + 1])
-                {
-                    return false;
-                }
+                return false;
             }
 
             return true;
@@ -212,13 +234,25 @@ namespace TP2
             int counter = 0;
             for (int i = 0; i < values.Length; i++)
             {
-                if (GetSuitFromCardIndex(values[i]) == suit)
+                if (suits[i] == suit)
                 {
                     counter++;
                 }
             }
 
             return counter;
+        }
+
+        public static bool HasSequence(int[] values)
+        {
+            for (int i = 0; i < values.Length - 1; i++)
+            {
+                if (values[i] > values[i + 1])
+                {
+                    return false;
+                }
+            }
+            return true;
         }
 
         public static int GetHandScore(int[] cardIndexes)

@@ -121,7 +121,7 @@ namespace TP2Tests
             // Assert
             Assert.True(onlySameColor);
         }
-        /*
+        
    [Fact]
    public void CanFindOnlySameColorCardsAllBlack()
    {
@@ -162,9 +162,8 @@ namespace TP2Tests
        // Assert
        Assert.False(onlySameColor);
    }
-   #endregion // HasOnlySameColorCards
+   
 
-   #region HasAllSameCardValues
    [Fact]
    public void CantFindAllSameCardValuesIfNotPresent()
    {
@@ -178,6 +177,7 @@ namespace TP2Tests
        // Assert
        Assert.False(hasAllSameCardValues);
    }
+   
    [Fact]
    public void CantFindAllSameCardValuesIfMajorityOfCardsHaveSameValue()
    {
@@ -191,6 +191,7 @@ namespace TP2Tests
        // Assert
        Assert.False(hasAllSameCardValues);
    }
+   
    [Fact]
    public void CanFindAllSameCardValuesIfPresent()
    {
@@ -204,9 +205,7 @@ namespace TP2Tests
        // Assert
        Assert.True(hasAllSameCardValues);
    }
-   #endregion // HasAllSameCardValues
 
-   #region HasAllFaces
    [Fact]
    public void CantFindAllFacesIfNonePresent()
    {
@@ -220,6 +219,7 @@ namespace TP2Tests
        // Assert
        Assert.False(hasAllFaces);
    }
+   
    [Fact]
    public void CantFindAllFacesIfNotOnlyFacesPresent()
    {
@@ -272,11 +272,7 @@ namespace TP2Tests
        // Assert
        Assert.True(hasAllFaces);
    }
-
-
-   #endregion // HasAllFaces
-
-   #region HasOnlyFaces
+   
    [Fact]
    public void CantFindOnlyFacesIfNonePresent()
    {
@@ -346,9 +342,8 @@ namespace TP2Tests
        // Assert
        Assert.True(hasOnlyFaces);
    }
-   #endregion // HasOnlyFaces
-
-   #region HasSameColorSequence
+   
+  
    [Fact]
    public void CantFindSameColorSequenceIfNonePresent()
    {
@@ -396,6 +391,7 @@ namespace TP2Tests
        // Assert
        Assert.False(hasSameColorSequence);
    }
+  
    [Fact]
    public void CanFindSameColorSequenceIfPresent()
    {
@@ -411,9 +407,7 @@ namespace TP2Tests
        // Assert
        Assert.True(hasSameColorSequence);
    }
-   #endregion // HasSameColorSequence
-
-   #region HasSequence
+   
    [Fact]
    public void CantFindSequenceIfNonePresent()
    {
@@ -427,6 +421,7 @@ namespace TP2Tests
        // Assert
        Assert.False(hasSequence);
    }
+
    [Fact]
    public void CanFindSequenceIfPresent()
    {
@@ -492,139 +487,139 @@ namespace TP2Tests
        // Assert
        Assert.True(hasSequence);
    }
-   #endregion // HasSequence
+   
+    [Fact]
+    public void ShouldGet0WhenTargetSuitNotInSuits()
+    {
+        // Arrange
+        const int EXPECTED = 0;
+        // Coeur
+        int suit = 0;
+        // 4, Valet, As
+        int[] values = { 3, 10, 0 };
+        // Diamant, Diamant, Diamant
+        int[] suits = { 1, 1, 1 };
 
-   #region GetScoreFromMultipleCardsOfASuit
-   [Fact]
-   public void ShouldGet0WhenTargetSuitNotInSuits()
-   {
-       // Arrange
-       const int EXPECTED = 0;
-       // Coeur
-       int suit = 0;
-       // 4, Valet, As
-       int[] values = { 3, 10, 0 };
-       // Diamant, Diamant, Diamant
-       int[] suits = { 1, 1, 1 };
+        // Act
+        int score = Game.GetScoreFromMultipleCardsOfASuit(suit, values, suits);
 
-       // Act
-       int score = Game.GetScoreFromMultipleCardsOfASuit(suit, values, suits);
+        // Assert
+        Assert.Equal(EXPECTED, score);
+    }
+    
+    [Fact]
+    public void ShouldGetRightScoreWithOneCardFromTargetSuit()
+    {
+        // Arrange
+        const int EXPECTED = 4;
+        // Coeur
+        int suit = 0;
+        // 4, Valet, As
+        int[] values = { 3, 10, 0 };
+        // Coeur, Diamant, Diamant
+        int[] suits = { 0, 1, 1 };
 
-       // Assert
-       Assert.Equal(EXPECTED, score);
-   }
-   [Fact]
-   public void ShouldGetRightScoreWithOneCardFromTargetSuit()
-   {
-       // Arrange
-       const int EXPECTED = 4;
-       // Coeur
-       int suit = 0;
-       // 4, Valet, As
-       int[] values = { 3, 10, 0 };
-       // Coeur, Diamant, Diamant
-       int[] suits = { 0, 1, 1 };
+        // Act
+        int score = Game.GetScoreFromMultipleCardsOfASuit(suit, values, suits);
 
-       // Act
-       int score = Game.GetScoreFromMultipleCardsOfASuit(suit, values, suits);
+        // Assert
+        Assert.Equal(EXPECTED, score);
+    }
+    /*
+    [Fact]
+    public void ShouldGetRightScoreWithMultipleCardsFromTargetSuit()
+    {
+        // Arrange
+        const int EXPECTED = 14;
+        // Coeur
+        int suit = 0;
+        // 4, Valet, As, Reine, 6
+        int[] values = { 3, 10, 0, 11, 5 };
+        // Coeur, Diamant, Diamant, Coeur, Pique
+        int[] suits = { 0, 1, 1, 0, 2 };
 
-       // Assert
-       Assert.Equal(EXPECTED, score);
-   }
-   [Fact]
-   public void ShouldGetRightScoreWithMultipleCardsFromTargetSuit()
-   {
-       // Arrange
-       const int EXPECTED = 14;
-       // Coeur
-       int suit = 0;
-       // 4, Valet, As, Reine, 6
-       int[] values = { 3, 10, 0, 11, 5 };
-       // Coeur, Diamant, Diamant, Coeur, Pique
-       int[] suits = { 0, 1, 1, 0, 2 };
+        // Act
+        int score = Game.GetScoreFromMultipleCardsOfASuit(suit, values, suits);
 
-       // Act
-       int score = Game.GetScoreFromMultipleCardsOfASuit(suit, values, suits);
+        // Assert
+        Assert.Equal(EXPECTED, score);
+    }
+    [Fact]
+    public void ShouldGetMaxScoreWithRightCombinationFromTargetSuit()
+    {
+        // Arrange
+        // Tr�fle
+        int suit = 3;
+        // Roi, Valet, As
+        int[] values = { 12, 10, 0, };
+        // Tr�fle, Tr�fle, Tr�fle
+        int[] suits = { 3, 3, 3 };
 
-       // Assert
-       Assert.Equal(EXPECTED, score);
-   }
-   [Fact]
-   public void ShouldGetMaxScoreWithRightCombinationFromTargetSuit()
-   {
-       // Arrange
-       // Tr�fle
-       int suit = 3;
-       // Roi, Valet, As
-       int[] values = { 12, 10, 0, };
-       // Tr�fle, Tr�fle, Tr�fle
-       int[] suits = { 3, 3, 3 };
+        // Act
+        int score = Game.GetScoreFromMultipleCardsOfASuit(suit, values, suits);
 
-       // Act
-       int score = Game.GetScoreFromMultipleCardsOfASuit(suit, values, suits);
+        // Assert
+        Assert.Equal(Game.MAX_SCORE, score);
+    }
+    #endregion // GetScoreFromMultipleCardsOfASuit
 
-       // Assert
-       Assert.Equal(Game.MAX_SCORE, score);
-   }
-   #endregion // GetScoreFromMultipleCardsOfASuit
+    #region GetHandScore
+    [Fact]
+    public void CanGetBestScoreFromCombinationScoreIfBetterThenAdditionScore()
+    {
+        // Arrange
+        // 2, 6, 9 de Coeur (M�me couleur = 24, Addition = 17)
+        int[] indexes = { 1, 5, 8 };
 
-   #region GetHandScore
-   [Fact]
-   public void CanGetBestScoreFromCombinationScoreIfBetterThenAdditionScore()
-   {
-       // Arrange
-       // 2, 6, 9 de Coeur (M�me couleur = 24, Addition = 17)
-       int[] indexes = { 1, 5, 8 };
+        // Act
+        int score = Game.GetHandScore(indexes);
 
-       // Act
-       int score = Game.GetHandScore(indexes);
+        // Assert
+        Assert.Equal(Game.SAME_COLOR_SCORE, score);
+    }
+    [Fact]
+    public void CanGetBestScoreFromAdditionScoreIfBetterThenCombinationScore()
+    {
+        const int EXPECTED = 30;
+        // Arrange
+        // 10, Valet, Reine de Pique (Suite de m�me couleur = 28, Addition = 30)
+        int[] indexes = { 35, 36, 37 };
 
-       // Assert
-       Assert.Equal(Game.SAME_COLOR_SCORE, score);
-   }
-   [Fact]
-   public void CanGetBestScoreFromAdditionScoreIfBetterThenCombinationScore()
-   {
-       const int EXPECTED = 30;
-       // Arrange
-       // 10, Valet, Reine de Pique (Suite de m�me couleur = 28, Addition = 30)
-       int[] indexes = { 35, 36, 37 };
+        // Act
+        int score = Game.GetHandScore(indexes);
 
-       // Act
-       int score = Game.GetHandScore(indexes);
+        // Assert
+        Assert.Equal(EXPECTED, score);
+    }
+    [Fact]
+    public void CanGetBestScoreFromSingleCardIfNoCombinationAndNoCardsFromSameSuit()
+    {
+        const int EXPECTED = 11;
+        // Arrange
+        // As de Coeur, Valet de Pique, 6 de Diamant (Aucune combinaison sp�ciale, Carte la plus forte = 11)
+        int[] indexes = { 0, 36, 18 };
 
-       // Assert
-       Assert.Equal(EXPECTED, score);
-   }
-   [Fact]
-   public void CanGetBestScoreFromSingleCardIfNoCombinationAndNoCardsFromSameSuit()
-   {
-       const int EXPECTED = 11;
-       // Arrange
-       // As de Coeur, Valet de Pique, 6 de Diamant (Aucune combinaison sp�ciale, Carte la plus forte = 11)
-       int[] indexes = { 0, 36, 18 };
+        // Act
+        int score = Game.GetHandScore(indexes);
 
-       // Act
-       int score = Game.GetHandScore(indexes);
+        // Assert
+        Assert.Equal(EXPECTED, score);
+    }
+    [Fact]
+    public void CanGetBestScoreFromSingleCardIfNoCombinationAndAdditionOfCardsFromSameSuitIsLower()
+    {
+        const int EXPECTED = 11;
+        // Arrange
+        // As de Coeur, 4 de Pique, 6 de Pique (Aucune combinaison sp�ciale, Carte la plus forte = 11, Addition = 10)
+        int[] indexes = { 0, 29, 31 };
 
-       // Assert
-       Assert.Equal(EXPECTED, score);
-   }
-   [Fact]
-   public void CanGetBestScoreFromSingleCardIfNoCombinationAndAdditionOfCardsFromSameSuitIsLower()
-   {
-       const int EXPECTED = 11;
-       // Arrange
-       // As de Coeur, 4 de Pique, 6 de Pique (Aucune combinaison sp�ciale, Carte la plus forte = 11, Addition = 10)
-       int[] indexes = { 0, 29, 31 };
+        // Act
+        int score = Game.GetHandScore(indexes);
 
-       // Act
-       int score = Game.GetHandScore(indexes);
-
-       // Assert
-       Assert.Equal(EXPECTED, score);
-   }
-   #endregion // GetHandScore
-       */
+        // Assert
+        Assert.Equal(EXPECTED, score);
+    }
+    #endregion // GetHandScore
+        */
     }
 }

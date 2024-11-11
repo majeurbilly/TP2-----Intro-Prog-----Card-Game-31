@@ -224,33 +224,52 @@ la valeur la plus haute entre les cartes en main
 ### recoit et retour de la methode
 
 ### la methode recoit:
-- la valeur des cartes en tableau
+- un tableau avec la valeur des couleur de chaques carte s
 
 ### la methode retourne:
-- true si les cartes sont de la meme couleur
-- false si les cartes sont pas toute du meme couleur
+- true si les cartes sont de la meme couleur, soit toutes rouge ou toutes noir
+- false si les cartes sont pas toute de la meme couleur, soit toutes rouge ou toutes noir
 
 ## algo
 1 - créé int temp qui représente la premiere carte de la main
 
 2 - boucle for pour inspecter les deux derniere cartes
 
-3 - si temp != false ;
+3 - si GetValueFromCardIndex[i] < 26 = true ;
+
+4 - sinon = false
 
 ```c#
-        public static bool HasOnlySameColorCards(int[] colorValues)
+     public static bool HasOnlySameColorCards(int[] colorValues)
         {
-            int temp = colorValues[0];
-            int[] red = { HEART, DIAMOND };
-            int[] black = { DIAMOND, SPADE };
-            for (int i = 1; i < colorValues.Length; i++)
+            bool isRed = false;
+            bool isBlack = false;
+            
+            for (int i = 0; i < colorValues.Length; i++)
             {
-                if (colorValues[i] != temp)
+                int[] redCard = { HEART, DIAMOND };
+
+                if (colorValues[i] > CLUB)
                 {
                     return false;
                 }
+                {
+                    
+                }
+                if (redCard.Contains(colorValues[i]))
+                {
+                    isRed = true;
+                }
+                else
+                {
+                    isBlack = true;
+                }
             }
 
+            if (isRed && isBlack)
+            {
+                return false;
+            }
             return true;
         }
 ```
@@ -393,16 +412,18 @@ la valeur la plus haute entre les cartes en main
 ---
 #################################
 
-# A la même séquence de couleurs
+# Avoir la même séquence de couleurs 
+même couleur
 ## public static bool HasSameColorSequence(int[] values, int[] suits)
 
 ### recoit et retour de la methode
 
 ### la methode recoit:
-- un tableau de valeurs et un tableau de couleur
+- un tableau des valeurs des carte
+- un tableau de valeur de la couleur des cartes
 
 ### la methode retourne:
-- true si le tableau de valeur est pareil que le tableau de couleur 
+- true si tout les valeurs des carte sont inférieur a 26 = rouge sinon = noir
 - false si ce nest pas le cas
 
 ## algo
