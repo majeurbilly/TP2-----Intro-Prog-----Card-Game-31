@@ -61,15 +61,16 @@ namespace TP2
             {
                 if (selectedCards[i] == false)
                 {
-                    int newCarte;
+                    int newCard;
 
                     do
                     {
-                        newCarte = new Random().Next(0, 52);
-                    } while (!availableCards[newCarte]);
+                        newCard = new Random().Next(0, 52);
+                    } while (!availableCards[newCard]);
 
-                    cardValues[i] = newCarte;
-                    availableCards[newCarte] = false;
+                    availableCards[newCard] = true;
+                    cardValues[i] = newCard;
+                    availableCards[newCard] = false;
                 }
             }
         }
@@ -171,15 +172,13 @@ namespace TP2
             int counter = 0;
             for (int i = 0; i < values.Length; i++)
             {
-                if (!FACES.Contains(GetValueFromCardIndex(values[i])))
+                if (!HasOnlyFaces(values))
                 {
                     return false;
                 }
-
-                counter += GetValueFromCardIndex(values[i]);
             }
 
-            if (counter != ALL_FACES_SUM)
+            if (!HasSequence(values))
             {
                 return false;
             }
@@ -222,27 +221,9 @@ namespace TP2
 
         public static bool HasSameColorSequence(int[] values, int[] colors)
         {
-            bool isRed = false;
-            bool isBlack = false;
-            for (int i = 0; i < colors.Length; i++)
-            {
-                if (colors[i] > CLUB)
-                {
-                    return false;
-                }
-                else if (colors[i] <= DIAMOND)
-                {
-                    isRed = true;
-                }
-                else
-                {
-                    isBlack = true;
-                }
-            }
-
             int[] arrayEnOrdre = PutCardInOrder(values);
 
-            if ((isRed && isBlack) || !HasSequence(arrayEnOrdre))
+            if ((!HasOnlySameColorCards(colors)) || !HasSequence(arrayEnOrdre))
             {
                 return false;
             }
@@ -309,23 +290,32 @@ namespace TP2
                 colorsValues[i] = GetSuitFromCardIndex(cardIndexes[i]);
             }
 
-            if (HasOnlySameColorCards(colorsValues))
+            if (HasOnlySameColorCards(cardIndexes))
             {
-                for (int i = 0; i < cardIndexes.Length; i++)
+                if (HasSameColorSequence(cardIndexes, colorsValues))
                 {
-                    handScore += GetScoreFromCardValue(cardIndexes[i]);
+                    return SAME_COLOR_SEQUENCE_SCORE ;
+                }
+                else
+                {
+                    return SAME_COLOR_SCORE;
                 }
             }
 
-            if (HasOnlySameColorCards(colorsValues) && !HasOnlyFaces(cardIndexes))
+            for (int i = 0; i < cardIndexes.Length; i++)
             {
-                return SAME_COLOR_SCORE;
-            }
-            else
-            {
-              return handScore;  
+                if (cardIndexes[i] == colorsValues[i] && !HasOnlyFaces(cardIndexes))
+                {
+                    return ALL_SAME_CARDS_VALUE_SCORE;
+                }
+                else
+                {
+                    return ALL_FACES_SCORE;
+                }
             }
             
+
+            return handScore;
         }
     }
 }

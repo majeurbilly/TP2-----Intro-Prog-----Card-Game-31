@@ -4,6 +4,97 @@
 
 ---
 
+# Methode
+
+## Booleen :
+```c#
+public static bool HasOnlySameColorCards(int[] colorValues)
+
+public static bool HasAllSameCardValues(int[] cardValues)
+
+public static bool HasAllFaces(int[] values)
+
+public static bool HasOnlyFaces(int[] values)
+
+public static bool HasSameColorSequence(int[] values, int[] colo
+    
+public static bool HasSequence(int[] values)
+```
+
+## int[] :
+```c#
+public static int[] SwitchAceValues(int[] cardValues)
+    
+public static int[] PutCardInOrder(int[] values)
+```
+
+## int :
+```c#
+public static int GetSuitFromCardIndex(int index)
+    
+public static int GetValueFromCardIndex(int index)
+
+public static int GetHighestCardValue(int[] cardsValues)
+
+public static int GetScoreFromMultipleCardsOfASuit(int suit, int[] values, int[] suits)
+```
+
+## void
+```c#
+public static void ShowScore(int[] cardIndexes)
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+---
 
 # Obtenir la combinaison à partir de l'index des cartes
 ## public static int GetSuitFromCardIndex(int "index de la carte selectionner dans le paquet de 51 index == 52 cartes") :
