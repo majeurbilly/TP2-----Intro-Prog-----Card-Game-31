@@ -321,7 +321,6 @@ namespace TP2
             {
                 return SAME_COLOR_SCORE;
             }
-            else if ()
             else
             {
               return handScore;  

@@ -9,14 +9,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d65d18a7-ed17-4e85-ac2b-0c0ade5a7d87" name="Changes" comment="green zone">
+    <list default="true" id="d65d18a7-ed17-4e85-ac2b-0c0ade5a7d87" name="Changes" comment="espoir et fun">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.TP2_ETU/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.TP2_ETU/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TP2/Game.cs" beforeDir="false" afterPath="$PROJECT_DIR$/TP2/Game.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/TP2/obj/Debug/net6.0-windows/TP2.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/TP2/obj/Debug/net6.0-windows/TP2.AssemblyInfo.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/TP2/obj/Debug/net6.0-windows/TP2.sourcelink.json" beforeDir="false" afterPath="$PROJECT_DIR$/TP2/obj/Debug/net6.0-windows/TP2.sourcelink.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TP2Tests/TestsGame.cs" beforeDir="false" afterPath="$PROJECT_DIR$/TP2Tests/TestsGame.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TP2Tests/obj/Debug/net6.0-windows/TP2Tests.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/TP2Tests/obj/Debug/net6.0-windows/TP2Tests.AssemblyInfo.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TP2Tests/obj/Debug/net6.0-windows/TP2Tests.sourcelink.json" beforeDir="false" afterPath="$PROJECT_DIR$/TP2Tests/obj/Debug/net6.0-windows/TP2Tests.sourcelink.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -135,7 +131,7 @@
       <workItem from="1731276535939" duration="7070000" />
       <workItem from="1731286392053" duration="4255000" />
       <workItem from="1731335585466" duration="1525000" />
-      <workItem from="1731361368785" duration="11707000" />
+      <workItem from="1731361368785" duration="14052000" />
     </task>
     <task id="LOCAL-00001" summary="check moi ca">
       <option name="closed" value="true" />
@@ -193,7 +189,15 @@
       <option name="project" value="LOCAL" />
       <updated>1731368438609</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="espoir et fun">
+      <option name="closed" value="true" />
+      <created>1731373903575</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1731373903575</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -210,7 +214,8 @@
     <MESSAGE value="zzz" />
     <MESSAGE value="green time" />
     <MESSAGE value="green zone" />
-    <option name="LAST_COMMIT_MESSAGE" value="green zone" />
+    <MESSAGE value="espoir et fun" />
+    <option name="LAST_COMMIT_MESSAGE" value="espoir et fun" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

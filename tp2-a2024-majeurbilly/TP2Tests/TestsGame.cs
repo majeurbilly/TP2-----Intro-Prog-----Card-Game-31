@@ -591,7 +591,7 @@ public void CanGetBestScoreFromAdditionScoreIfBetterThenCombinationScore()
  // Assert
  Assert.Equal(EXPECTED, score);
 }
-/*
+
 [Fact]
 public void CanGetBestScoreFromSingleCardIfNoCombinationAndNoCardsFromSameSuit()
 {
@@ -620,7 +620,7 @@ public void CanGetBestScoreFromSingleCardIfNoCombinationAndAdditionOfCardsFromSa
  // Assert
  Assert.Equal(EXPECTED, score);
 }
-#endregion // GetHandScore
- */
+
+
     }
 }
