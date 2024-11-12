@@ -525,7 +525,7 @@ namespace TP2Tests
         // Assert
         Assert.Equal(EXPECTED, score);
     }
-    /*
+ 
     [Fact]
     public void ShouldGetRightScoreWithMultipleCardsFromTargetSuit()
     {
@@ -544,82 +544,83 @@ namespace TP2Tests
         // Assert
         Assert.Equal(EXPECTED, score);
     }
-    [Fact]
-    public void ShouldGetMaxScoreWithRightCombinationFromTargetSuit()
-    {
-        // Arrange
-        // Tr�fle
-        int suit = 3;
-        // Roi, Valet, As
-        int[] values = { 12, 10, 0, };
-        // Tr�fle, Tr�fle, Tr�fle
-        int[] suits = { 3, 3, 3 };
 
-        // Act
-        int score = Game.GetScoreFromMultipleCardsOfASuit(suit, values, suits);
+ [Fact]
+ public void ShouldGetMaxScoreWithRightCombinationFromTargetSuit()
+ {
+     // Arrange
+     // Tr�fle
+     int suit = 3;
+     // Roi, Valet, As
+     int[] values = { 12, 10, 0, };
+     // Tr�fle, Tr�fle, Tr�fle
+     int[] suits = { 3, 3, 3 };
 
-        // Assert
-        Assert.Equal(Game.MAX_SCORE, score);
-    }
-    #endregion // GetScoreFromMultipleCardsOfASuit
+     // Act
+     int score = Game.GetScoreFromMultipleCardsOfASuit(suit, values, suits);
 
-    #region GetHandScore
-    [Fact]
-    public void CanGetBestScoreFromCombinationScoreIfBetterThenAdditionScore()
-    {
-        // Arrange
-        // 2, 6, 9 de Coeur (M�me couleur = 24, Addition = 17)
-        int[] indexes = { 1, 5, 8 };
+     // Assert
+     Assert.Equal(Game.MAX_SCORE, score);
+ }
 
-        // Act
-        int score = Game.GetHandScore(indexes);
+[Fact]
+public void CanGetBestScoreFromCombinationScoreIfBetterThenAdditionScore()
+{
+  // Arrange
+  // 2, 6, 9 de Coeur (M�me couleur = 24, Addition = 17)
+  int[] indexes = { 1, 5, 8 };
 
-        // Assert
-        Assert.Equal(Game.SAME_COLOR_SCORE, score);
-    }
-    [Fact]
-    public void CanGetBestScoreFromAdditionScoreIfBetterThenCombinationScore()
-    {
-        const int EXPECTED = 30;
-        // Arrange
-        // 10, Valet, Reine de Pique (Suite de m�me couleur = 28, Addition = 30)
-        int[] indexes = { 35, 36, 37 };
+  // Act
+  int score = Game.GetHandScore(indexes);
 
-        // Act
-        int score = Game.GetHandScore(indexes);
+  // Assert
+  Assert.Equal(Game.SAME_COLOR_SCORE, score);
+}
 
-        // Assert
-        Assert.Equal(EXPECTED, score);
-    }
-    [Fact]
-    public void CanGetBestScoreFromSingleCardIfNoCombinationAndNoCardsFromSameSuit()
-    {
-        const int EXPECTED = 11;
-        // Arrange
-        // As de Coeur, Valet de Pique, 6 de Diamant (Aucune combinaison sp�ciale, Carte la plus forte = 11)
-        int[] indexes = { 0, 36, 18 };
+[Fact]
+public void CanGetBestScoreFromAdditionScoreIfBetterThenCombinationScore()
+{
+ const int EXPECTED = 30;
+ // Arrange
+ // 10, Valet, Reine de Pique (Suite de m�me couleur = 28, Addition = 30)
+ int[] indexes = { 35, 36, 37 };
 
-        // Act
-        int score = Game.GetHandScore(indexes);
+ // Act
+ int score = Game.GetHandScore(indexes);
 
-        // Assert
-        Assert.Equal(EXPECTED, score);
-    }
-    [Fact]
-    public void CanGetBestScoreFromSingleCardIfNoCombinationAndAdditionOfCardsFromSameSuitIsLower()
-    {
-        const int EXPECTED = 11;
-        // Arrange
-        // As de Coeur, 4 de Pique, 6 de Pique (Aucune combinaison sp�ciale, Carte la plus forte = 11, Addition = 10)
-        int[] indexes = { 0, 29, 31 };
+ // Assert
+ Assert.Equal(EXPECTED, score);
+}
+/*
+[Fact]
+public void CanGetBestScoreFromSingleCardIfNoCombinationAndNoCardsFromSameSuit()
+{
+ const int EXPECTED = 11;
+ // Arrange
+ // As de Coeur, Valet de Pique, 6 de Diamant (Aucune combinaison sp�ciale, Carte la plus forte = 11)
+ int[] indexes = { 0, 36, 18 };
 
-        // Act
-        int score = Game.GetHandScore(indexes);
+ // Act
+ int score = Game.GetHandScore(indexes);
 
-        // Assert
-        Assert.Equal(EXPECTED, score);
-    }
-    #endregion // GetHandScore
-        */
+ // Assert
+ Assert.Equal(EXPECTED, score);
+}
+[Fact]
+public void CanGetBestScoreFromSingleCardIfNoCombinationAndAdditionOfCardsFromSameSuitIsLower()
+{
+ const int EXPECTED = 11;
+ // Arrange
+ // As de Coeur, 4 de Pique, 6 de Pique (Aucune combinaison sp�ciale, Carte la plus forte = 11, Addition = 10)
+ int[] indexes = { 0, 29, 31 };
+
+ // Act
+ int score = Game.GetHandScore(indexes);
+
+ // Assert
+ Assert.Equal(EXPECTED, score);
+}
+#endregion // GetHandScore
+ */
     }
 }

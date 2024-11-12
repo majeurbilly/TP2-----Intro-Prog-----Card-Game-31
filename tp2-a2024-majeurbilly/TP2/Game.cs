@@ -24,7 +24,6 @@ namespace TP2
         public const int JACK = 10;
         public const int QUEEN = 11;
         public const int KING = 12;
-        public const int NEW_ACE_VALUE = 1;
 
         public static int[] FACES = { JACK, QUEEN, KING };
 
@@ -212,7 +211,7 @@ namespace TP2
                     int additionArray;
                     if (cardValues[i] == ACE)
                     {
-                        cardValues[i] = NEW_ACE_VALUE;
+                        cardValues[i] = ACES_SCORE;
                         permutation = true;
                     }
                 }
@@ -242,9 +241,8 @@ namespace TP2
             }
 
             int[] arrayEnOrdre = PutCardInOrder(values);
-            // int[] arrayWithAceValue = SwitchAceValues(arrayEnOrdre);
 
-            if ((isRed && isBlack)|| !HasSequence(arrayEnOrdre))
+            if ((isRed && isBlack) || !HasSequence(arrayEnOrdre))
             {
                 return false;
             }
@@ -259,7 +257,7 @@ namespace TP2
             {
                 if (suits[i] == suit)
                 {
-                    temp = GetScoreFromCardValue(values[i]);
+                    temp += GetScoreFromCardValue(values[i]);
                 }
             }
 
@@ -305,19 +303,30 @@ namespace TP2
         public static int GetHandScore(int[] cardIndexes)
         {
             int handScore = 0;
-            if (HasOnlySameColorCards(cardIndexes))
+            int[] colorsValues = new int[cardIndexes.Length];
+            for (int i = 0; i < cardIndexes.Length; i++)
             {
-                for (int i = 0; i < cardIndexes.Length - 1; i++)
+                colorsValues[i] = GetSuitFromCardIndex(cardIndexes[i]);
+            }
+
+            if (HasOnlySameColorCards(colorsValues))
+            {
+                for (int i = 0; i < cardIndexes.Length; i++)
                 {
-                    int fris = GetSuitFromCardIndex(cardIndexes[i]);
-                    if (GetSuitFromCardIndex(cardIndexes[i]) == GetSuitFromCardIndex(cardIndexes[i + 1]))
-                    {
-                        handScore += GetValueFromCardIndex(cardIndexes[i]) + GetValueFromCardIndex(cardIndexes[i + 1]);
-                    }
+                    handScore += GetScoreFromCardValue(cardIndexes[i]);
                 }
             }
 
-            return 0;
+            if (HasOnlySameColorCards(colorsValues) && !HasOnlyFaces(cardIndexes))
+            {
+                return SAME_COLOR_SCORE;
+            }
+            else if ()
+            else
+            {
+              return handScore;  
+            }
+            
         }
     }
 }
