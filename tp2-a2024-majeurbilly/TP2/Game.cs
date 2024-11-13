@@ -139,7 +139,18 @@ namespace TP2
 
         public static bool HasAllSameCardValues(int[] cardValues)
         {
-            return cardValues.Sum() % cardValues.Length == 0;
+            if (cardValues == null || cardValues.Length == 0)
+                return false;
+                
+            int firstValue = cardValues[0];
+            
+            for (int i = 1; i < cardValues.Length; i++)
+            {
+                if (cardValues[i] != firstValue)
+                    return false;
+            }
+            
+            return true;
         }
 
         public static bool HasAllFaces(int[] values)
@@ -259,10 +270,6 @@ namespace TP2
 
         public static int GetHandScore(int[] cardIndexes)
         {
-            int handScoreWithSpecialCombinasion = 0;
-            int handScoreWithAddtion = 0;
-            int handScoreWithHighestCard = 0;
-            int finalHandScore = 0;
             int[] colorsValues = new int[cardIndexes.Length];
             int[] cardValues = new int[cardIndexes.Length];
             for (int i = 0; i < cardIndexes.Length; i++)
@@ -270,102 +277,53 @@ namespace TP2
                 colorsValues[i] = GetSuitFromCardIndex(cardIndexes[i]);
                 cardValues[i] = GetValueFromCardIndex(cardIndexes[i]);
             }
-
-            cardValues = SwitchAceValues(cardValues);
-
-
-            handScoreWithSpecialCombinasion =
-                GetHandScoreWithSpecialCombinasion(cardValues, handScoreWithSpecialCombinasion, colorsValues);
-
-            if (HasOnlySameColorCards(colorsValues))
-            {
-                for (int i = 0; i < colorsValues.Length; i++)
-                {
-                    int temp = 0;
-                    if (temp < GetScoreFromMultipleCardsOfASuit(colorsValues[i], cardValues, colorsValues))
-                    {
-                        handScoreWithAddtion = GetScoreFromMultipleCardsOfASuit(colorsValues[i], cardValues, colorsValues);
-                    }
-                }
-            }
-
-
-            handScoreWithHighestCard = GetHighestCardValue(cardValues);
-
-
-            if (handScoreWithSpecialCombinasion > handScoreWithAddtion &&
-                handScoreWithSpecialCombinasion > handScoreWithHighestCard)
-            {
-                finalHandScore = handScoreWithSpecialCombinasion;
-            }
-
-            if (handScoreWithAddtion > handScoreWithSpecialCombinasion &&
-                handScoreWithAddtion > handScoreWithHighestCard)
-            {
-                finalHandScore = handScoreWithAddtion;
-            }
-
-            if (handScoreWithHighestCard > handScoreWithSpecialCombinasion &&
-                handScoreWithHighestCard > handScoreWithAddtion)
-            {
-                finalHandScore = handScoreWithHighestCard;
-            }
-
-            return finalHandScore;
+            // retourne le plus haut des int de l'array de scores.
+            return new int[] { GetHandScoreWithSpecialCombinasion(cardValues, colorsValues), GetHighestCardValue(cardValues), GetHighestColorScore(colorsValues, cardValues) }.Max();
         }
 
-        private static int GetHandScoreWithSpecialCombinasion(int[] cardValues, int handScoreWithSpecialCombinasion,
+        private static int GetHighestColorScore(int[] colorsValues, int[] cardValues)
+        {
+            int bestSuitScore = 0;
+            for (int i = 0; i < colorsValues.Length; i++)
+            {
+                int suitScore = GetScoreFromMultipleCardsOfASuit(colorsValues[i], cardValues, colorsValues);
+                if (bestSuitScore < suitScore)
+                {
+                    bestSuitScore = suitScore;
+                }
+            }
+            return bestSuitScore;
+        }
+
+        private static int GetHandScoreWithSpecialCombinasion(int[] cardValues,
             int[] colorsValues)
         {
+            // course pour return le plus vite possible, sert a rien de check les autres quand tu est valide sur le plus haut des tes score possible.
             if (HasAllSameCardValues(cardValues))
             {
-                if (handScoreWithSpecialCombinasion < ALL_SAME_CARDS_VALUE_SCORE)
-                {
-                    handScoreWithSpecialCombinasion = ALL_SAME_CARDS_VALUE_SCORE;
-                }
+                return ALL_SAME_CARDS_VALUE_SCORE;
             }
-
-            if (HasOnlyFaces(cardValues))
-            {
-                if (handScoreWithSpecialCombinasion < ONLY_FACES_SCORE)
-                {
-                    handScoreWithSpecialCombinasion = ONLY_FACES_SCORE;
-                }
-            }
-
-            if (HasOnlySameColorCards(colorsValues))
-            {
-                if (handScoreWithSpecialCombinasion < SAME_COLOR_SCORE)
-                {
-                    handScoreWithSpecialCombinasion = SAME_COLOR_SCORE;
-                }
-            }
-
-            if (HasSequence(cardValues))
-            {
-                if (handScoreWithSpecialCombinasion < SEQUENCE_SCORE)
-                {
-                    handScoreWithSpecialCombinasion = SEQUENCE_SCORE;
-                }
-            }
-
-            if (HasSameColorSequence(cardValues, colorsValues))
-            {
-                if (handScoreWithSpecialCombinasion < SAME_COLOR_SEQUENCE_SCORE)
-                {
-                    handScoreWithSpecialCombinasion = SAME_COLOR_SEQUENCE_SCORE;
-                }
-            }
-
             if (HasAllFaces(cardValues))
             {
-                if (handScoreWithSpecialCombinasion < ALL_FACES_SCORE)
-                {
-                    handScoreWithSpecialCombinasion = ALL_FACES_SCORE;
-                }
+                return ALL_FACES_SCORE;
             }
-
-            return handScoreWithSpecialCombinasion;
+            if (HasOnlyFaces(cardValues))
+            {
+                return ONLY_FACES_SCORE;
+            }
+            if (HasSameColorSequence(cardValues, colorsValues))
+            {
+                return SAME_COLOR_SEQUENCE_SCORE;
+            }
+            if (HasSequence(cardValues))
+            {
+                return SEQUENCE_SCORE;
+            }
+            if (HasOnlySameColorCards(colorsValues))
+            {
+                return SAME_COLOR_SCORE;
+            }
+            return 0;
         }
     }
 }
