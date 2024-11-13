@@ -9,23 +9,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d65d18a7-ed17-4e85-ac2b-0c0ade5a7d87" name="Changes" comment="">
+    <list default="true" id="d65d18a7-ed17-4e85-ac2b-0c0ade5a7d87" name="Changes" comment="caca v1">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.TP2_ETU/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.TP2_ETU/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/TP2/Game.cs" beforeDir="false" afterPath="$PROJECT_DIR$/TP2/Game.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/TP2/obj/Debug/net6.0-windows/TP2.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/TP2/obj/Debug/net6.0-windows/TP2.AssemblyInfo.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/TP2/obj/Debug/net6.0-windows/TP2.sourcelink.json" beforeDir="false" afterPath="$PROJECT_DIR$/TP2/obj/Debug/net6.0-windows/TP2.sourcelink.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TP2/obj/TP2.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/TP2/obj/TP2.csproj.nuget.dgspec.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TP2/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/TP2/obj/project.assets.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TP2/obj/project.packagespec.json" beforeDir="false" afterPath="$PROJECT_DIR$/TP2/obj/project.packagespec.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TP2/obj/rider.project.model.nuget.info" beforeDir="false" afterPath="$PROJECT_DIR$/TP2/obj/rider.project.model.nuget.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TP2/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/TP2/obj/rider.project.restore.info" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/TP2Tests/obj/Debug/net6.0-windows/TP2Tests.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/TP2Tests/obj/Debug/net6.0-windows/TP2Tests.AssemblyInfo.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/TP2Tests/obj/Debug/net6.0-windows/TP2Tests.sourcelink.json" beforeDir="false" afterPath="$PROJECT_DIR$/TP2Tests/obj/Debug/net6.0-windows/TP2Tests.sourcelink.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TP2Tests/obj/TP2Tests.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/TP2Tests/obj/TP2Tests.csproj.nuget.dgspec.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TP2Tests/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/TP2Tests/obj/project.assets.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TP2Tests/obj/project.packagespec.json" beforeDir="false" afterPath="$PROJECT_DIR$/TP2Tests/obj/project.packagespec.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TP2Tests/obj/rider.project.model.nuget.info" beforeDir="false" afterPath="$PROJECT_DIR$/TP2Tests/obj/rider.project.model.nuget.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TP2Tests/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/TP2Tests/obj/rider.project.restore.info" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -66,15 +56,16 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    ".NET Launch Settings Profile.TP2.executor": "Debug",
+    ".NET Launch Settings Profile.TP2.executor": "Run",
     "135269e9-aee1-432a-bdac-48163f9d9dbb.executor": "Debug",
     "2f3d3b97-2c8f-46a3-9514-c5244b5a15ef.executor": "Debug",
+    "332a9193-a89c-4ce2-be20-d62b595fe215.executor": "Debug",
     "45f0afa2-582f-4ae9-89a4-16ae279c770e.executor": "Debug",
     "7d646aa9-d574-49da-8dfc-7e6bbc17a066.executor": "Debug",
     "85486e7a-bb32-45a2-af35-9420e272052c.executor": "Debug",
     "91924091-30d5-492c-9a08-8a0b9b9ff891.executor": "Debug",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "XThreadsFramesViewSplitterKey": "0.7729941",
+    "XThreadsFramesViewSplitterKey": "0.41601562",
     "b9f9b865-c1b7-4a19-aa49-598fe8410338.executor": "Debug",
     "daed1254-b8dd-4f47-a2ef-bed2b6a4faf6.executor": "Debug",
     "fd74ef26-384b-412b-abdd-a444c280aa55.executor": "Debug",
@@ -150,7 +141,7 @@
       <workItem from="1731361368785" duration="14052000" />
       <workItem from="1731418285288" duration="10503000" />
       <workItem from="1731432345369" duration="395000" />
-      <workItem from="1731454597441" duration="2871000" />
+      <workItem from="1731454597441" duration="8638000" />
     </task>
     <task id="LOCAL-00001" summary="check moi ca">
       <option name="closed" value="true" />
@@ -224,7 +215,15 @@
       <option name="project" value="LOCAL" />
       <updated>1731428823186</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="caca v1">
+      <option name="closed" value="true" />
+      <created>1731457924907</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1731457924907</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -243,37 +242,12 @@
     <MESSAGE value="green zone" />
     <MESSAGE value="espoir et fun" />
     <MESSAGE value="✅" />
-    <option name="LAST_COMMIT_MESSAGE" value="✅" />
+    <MESSAGE value="caca v1" />
+    <option name="LAST_COMMIT_MESSAGE" value="caca v1" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/TP2/Game.cs</url>
-          <line>80</line>
-          <properties documentPath="C:\Users\jefou\OneDrive\Desktop\TP2-----Intro-Prog-----Card-Game-31\tp2-a2024-majeurbilly\TP2\Game.cs" containingFunctionPresentation="Method 'GetScoreFromCardValue'">
-            <startOffsets>
-              <option value="2409" />
-            </startOffsets>
-            <endOffsets>
-              <option value="2410" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/TP2/Game.cs</url>
-          <line>102</line>
-          <properties documentPath="C:\Users\jefou\OneDrive\Desktop\TP2-----Intro-Prog-----Card-Game-31\tp2-a2024-majeurbilly\TP2\Game.cs" containingFunctionPresentation="Method 'GetHighestCardValue'">
-            <startOffsets>
-              <option value="3018" />
-            </startOffsets>
-            <endOffsets>
-              <option value="3039" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="3" />
-        </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/TP2Tests/TestsGame.cs</url>
           <line>18</line>
@@ -366,108 +340,43 @@
           <option name="timeStamp" value="33" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/TP2/Game.cs</url>
-          <line>296</line>
-          <properties documentPath="C:\Users\jefou\OneDrive\Desktop\TP2-----Intro-Prog-----Card-Game-31\tp2-a2024-majeurbilly\TP2\Game.cs" containingFunctionPresentation="Method 'GetHandScore'">
+          <url>file://$PROJECT_DIR$/TP2Tests/TestsGame.cs</url>
+          <line>617</line>
+          <properties documentPath="C:\Users\jefou\OneDrive\Desktop\TP2-----Intro-Prog-----Card-Game-31\tp2-a2024-majeurbilly\TP2Tests\TestsGame.cs" containingFunctionPresentation="Method 'CanGetBestScoreFromSingleCardIfNoCombinationAndAdditionOfCardsFromSameSuitIsLower'">
             <startOffsets>
-              <option value="8218" />
+              <option value="14229" />
             </startOffsets>
             <endOffsets>
-              <option value="8256" />
+              <option value="14268" />
             </endOffsets>
           </properties>
-          <option name="timeStamp" value="34" />
+          <option name="timeStamp" value="49" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/TP2/Game.cs</url>
-          <line>264</line>
-          <properties documentPath="C:\Users\jefou\OneDrive\Desktop\TP2-----Intro-Prog-----Card-Game-31\tp2-a2024-majeurbilly\TP2\Game.cs" containingFunctionPresentation="Method 'PutCardInOrder'">
+          <line>297</line>
+          <properties documentPath="C:\Users\jefou\OneDrive\Desktop\TP2-----Intro-Prog-----Card-Game-31\tp2-a2024-majeurbilly\TP2\Game.cs" containingFunctionPresentation="Method 'GetHandScore'">
             <startOffsets>
-              <option value="7320" />
+              <option value="8342" />
             </startOffsets>
             <endOffsets>
-              <option value="7321" />
+              <option value="8383" />
             </endOffsets>
           </properties>
-          <option name="timeStamp" value="35" />
+          <option name="timeStamp" value="55" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/TP2/Game.cs</url>
-          <line>305</line>
+          <line>308</line>
           <properties documentPath="C:\Users\jefou\OneDrive\Desktop\TP2-----Intro-Prog-----Card-Game-31\tp2-a2024-majeurbilly\TP2\Game.cs" containingFunctionPresentation="Method 'GetHandScore'">
             <startOffsets>
-              <option value="8525" />
+              <option value="8788" />
             </startOffsets>
             <endOffsets>
-              <option value="8565" />
+              <option value="8888" />
             </endOffsets>
           </properties>
-          <option name="timeStamp" value="36" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/TP2/Game.cs</url>
-          <line>317</line>
-          <properties documentPath="C:\Users\jefou\OneDrive\Desktop\TP2-----Intro-Prog-----Card-Game-31\tp2-a2024-majeurbilly\TP2\Game.cs" containingFunctionPresentation="Method 'GetHandScore'">
-            <startOffsets>
-              <option value="8927" />
-            </startOffsets>
-            <endOffsets>
-              <option value="8956" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="37" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/TP2/Game.cs</url>
-          <line>322</line>
-          <properties documentPath="C:\Users\jefou\OneDrive\Desktop\TP2-----Intro-Prog-----Card-Game-31\tp2-a2024-majeurbilly\TP2\Game.cs" containingFunctionPresentation="Method 'GetHandScore'">
-            <startOffsets>
-              <option value="9069" />
-            </startOffsets>
-            <endOffsets>
-              <option value="9121" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="39" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/TP2/Game.cs</url>
-          <line>327</line>
-          <properties documentPath="C:\Users\jefou\OneDrive\Desktop\TP2-----Intro-Prog-----Card-Game-31\tp2-a2024-majeurbilly\TP2\Game.cs" containingFunctionPresentation="Method 'GetHandScore'">
-            <startOffsets>
-              <option value="9245" />
-            </startOffsets>
-            <endOffsets>
-              <option value="9274" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="40" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/TP2/Game.cs</url>
-          <line>331</line>
-          <properties documentPath="C:\Users\jefou\OneDrive\Desktop\TP2-----Intro-Prog-----Card-Game-31\tp2-a2024-majeurbilly\TP2\Game.cs" containingFunctionPresentation="Method 'GetHandScore'">
-            <startOffsets>
-              <option value="9387" />
-            </startOffsets>
-            <endOffsets>
-              <option value="9427" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="41" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/TP2/Game.cs</url>
-          <line>335</line>
-          <properties documentPath="C:\Users\jefou\OneDrive\Desktop\TP2-----Intro-Prog-----Card-Game-31\tp2-a2024-majeurbilly\TP2\Game.cs" containingFunctionPresentation="Method 'GetHandScore'">
-            <startOffsets>
-              <option value="9590" />
-            </startOffsets>
-            <endOffsets>
-              <option value="9631" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="42" />
+          <option name="timeStamp" value="56" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

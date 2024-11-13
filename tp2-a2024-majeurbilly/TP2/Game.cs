@@ -288,70 +288,108 @@ namespace TP2
             int handScoreWithHighestCard = 0;
             int finalHandScore = 0;
             int[] colorsValues = new int[cardIndexes.Length];
+            int[] cardValues = new int[cardIndexes.Length];
             for (int i = 0; i < cardIndexes.Length; i++)
             {
                 colorsValues[i] = GetSuitFromCardIndex(cardIndexes[i]);
+                cardValues[i] = GetValueFromCardIndex(cardIndexes[i]);
             }
 
-      
-            if (HasAllSameCardValues(cardIndexes))
-            {
-                handScoreWithSpecialCombinasion = ALL_SAME_CARDS_VALUE_SCORE;
-            }
+            cardValues = SwitchAceValues(cardValues);
 
-            else if (HasOnlyFaces(cardIndexes))
+
+            handScoreWithSpecialCombinasion =
+                GetHandScoreWithSpecialCombinasion(cardValues, handScoreWithSpecialCombinasion, colorsValues);
+
+            if (HasOnlySameColorCards(colorsValues))
             {
-                handScoreWithSpecialCombinasion = ONLY_FACES_SCORE;
-            }
-            else if (HasOnlySameColorCards(colorsValues))
-            {
-                if (HasSameColorSequence(cardIndexes, colorsValues))
+                for (int i = 0; i < colorsValues.Length; i++)
                 {
-                    handScoreWithSpecialCombinasion = SAME_COLOR_SEQUENCE_SCORE;
-                }
-                else
-                {
-                    handScoreWithSpecialCombinasion = SAME_COLOR_SCORE;
+                    int temp = 0;
+                    if (temp < GetScoreFromMultipleCardsOfASuit(colorsValues[i], cardValues, colorsValues))
+                    {
+                        handScoreWithAddtion = GetScoreFromMultipleCardsOfASuit(colorsValues[i], cardValues, colorsValues);
+                    }
                 }
             }
 
-            else if (HasSequence(cardIndexes))
-            {
-                handScoreWithSpecialCombinasion = SEQUENCE_SCORE;
-            }
 
-            else if (HasSameColorSequence(cardIndexes, colorsValues))
-            {
-                handScoreWithSpecialCombinasion = SAME_COLOR_SEQUENCE_SCORE;
-            }
+            handScoreWithHighestCard = GetHighestCardValue(cardValues);
 
-            else if (HasAllFaces(cardIndexes))
-            {
-                handScoreWithSpecialCombinasion = ALL_FACES_SCORE;
-            }
-            else if (HasOnlySameColorCards(colorsValues))
-            {
-                handScoreWithAddtion = GetScoreFromMultipleCardsOfASuit(cardIndexes[0], colorsValues, colorsValues);
-            }
-            else if (!HasOnlySameColorCards(colorsValues))
-            {
-                handScoreWithHighestCard = GetHighestCardValue(cardIndexes);
-            }
 
-            else if (handScoreWithSpecialCombinasion > handScoreWithAddtion && handScoreWithSpecialCombinasion > handScoreWithHighestCard)
+            if (handScoreWithSpecialCombinasion > handScoreWithAddtion &&
+                handScoreWithSpecialCombinasion > handScoreWithHighestCard)
             {
                 finalHandScore = handScoreWithSpecialCombinasion;
             }
-            else if (handScoreWithAddtion > handScoreWithSpecialCombinasion && handScoreWithAddtion > handScoreWithHighestCard)
+
+            if (handScoreWithAddtion > handScoreWithSpecialCombinasion &&
+                handScoreWithAddtion > handScoreWithHighestCard)
             {
                 finalHandScore = handScoreWithAddtion;
             }
-            else if (handScoreWithHighestCard > handScoreWithSpecialCombinasion && handScoreWithHighestCard > handScoreWithAddtion)
+
+            if (handScoreWithHighestCard > handScoreWithSpecialCombinasion &&
+                handScoreWithHighestCard > handScoreWithAddtion)
             {
                 finalHandScore = handScoreWithHighestCard;
             }
 
             return finalHandScore;
+        }
+
+        private static int GetHandScoreWithSpecialCombinasion(int[] cardValues, int handScoreWithSpecialCombinasion,
+            int[] colorsValues)
+        {
+            if (HasAllSameCardValues(cardValues))
+            {
+                if (handScoreWithSpecialCombinasion < ALL_SAME_CARDS_VALUE_SCORE)
+                {
+                    handScoreWithSpecialCombinasion = ALL_SAME_CARDS_VALUE_SCORE;
+                }
+            }
+
+            if (HasOnlyFaces(cardValues))
+            {
+                if (handScoreWithSpecialCombinasion < ONLY_FACES_SCORE)
+                {
+                    handScoreWithSpecialCombinasion = ONLY_FACES_SCORE;
+                }
+            }
+
+            if (HasOnlySameColorCards(colorsValues))
+            {
+                if (handScoreWithSpecialCombinasion < SAME_COLOR_SCORE)
+                {
+                    handScoreWithSpecialCombinasion = SAME_COLOR_SCORE;
+                }
+            }
+
+            if (HasSequence(cardValues))
+            {
+                if (handScoreWithSpecialCombinasion < SEQUENCE_SCORE)
+                {
+                    handScoreWithSpecialCombinasion = SEQUENCE_SCORE;
+                }
+            }
+
+            if (HasSameColorSequence(cardValues, colorsValues))
+            {
+                if (handScoreWithSpecialCombinasion < SAME_COLOR_SEQUENCE_SCORE)
+                {
+                    handScoreWithSpecialCombinasion = SAME_COLOR_SEQUENCE_SCORE;
+                }
+            }
+
+            if (HasAllFaces(cardValues))
+            {
+                if (handScoreWithSpecialCombinasion < ALL_FACES_SCORE)
+                {
+                    handScoreWithSpecialCombinasion = ALL_FACES_SCORE;
+                }
+            }
+
+            return handScoreWithSpecialCombinasion;
         }
     }
 }
