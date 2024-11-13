@@ -3,10 +3,10 @@
 
 
 ---
+# BLOC LEGO
+## Methode
 
-# Methode
-
-## Booleen :
+### Booleen :
 ```c#
 public static bool HasOnlySameColorCards(int[] colorValues)
 
@@ -44,57 +44,6 @@ public static int GetScoreFromMultipleCardsOfASuit(int suit, int[] values, int[]
 public static void ShowScore(int[] cardIndexes)
 ```
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
----
 
 # Obtenir la combinaison à partir de l'index des cartes
 ## public static int GetSuitFromCardIndex(int "index de la carte selectionner dans le paquet de 51 index == 52 cartes") :
@@ -162,29 +111,33 @@ Au début de la partie, les 52 booléens sont initialisés par le code fourni à
 rien (void)
 
 ## Algo
-1 - dans une boule for qui va rouler 3 fois
+1 - dans une boucle for j'inspecte le tableau de carte selectedCards
 
-2 - le if va regarder si le joueur désir échanger sa carte pour une autre.
+2 - si la carte selectionner est false
 
-3 - si la carte est a false, une 4eme carte est créé et est rajouter dans le jeu. un fois que la 4eme carte prendre la place
-  de la carte a échanger celle-ci redevient disponible dans le jeu.
+3 - créé variable newCard
+
+4 - boucle do tant que la nouvelle carte nest pas dipo soit true
+
+5 - mettre mes variables a leur place
 
 ```c#
- public static void DistributeCard(int[] cardValues, bool[] selectedCards, bool[] availableCards)
+        public static void DistributeCard(int[] cardValues, bool[] selectedCards, bool[] availableCards)
         {
             for (int i = 0; i < selectedCards.Length; i++)
             {
                 if (selectedCards[i] == false)
                 {
-                    int newCarte;
+                    int newCard;
 
                     do
                     {
-                        newCarte = new Random().Next(0, 52);
-                    } while (!availableCards[newCarte]);
+                        newCard = new Random().Next(0, 52);
+                    } while (!availableCards[newCard]);
 
-                    cardValues[i] = newCarte;
-                    availableCards[newCarte] = false;
+                    availableCards[newCard] = true;
+                    cardValues[i] = newCard;
+                    availableCards[newCard] = false;
                 }
             }
         }
@@ -381,25 +334,24 @@ la valeur la plus haute entre les cartes en main
 - false si les cartes sont d'une valeur différente
 
 
-1 - créé int temp qui représente la premiere carte de la main
 
-2 - boucle for pour inspecter les deux derniere cartes
+1 - boucle for pour inspecter cartes
 
-3 - si temp != false ;
+2 - si carte 1 != carte 2 ;
 
 ```c#
         public static bool HasAllSameCardValues(int[] cardValues)
         {
-            int temp = GetValueFromCardIndex(cardValues[0]);
-            for (int i = 1; i < cardValues.Length; i++)
+            for (int i = 1; i < cardValues.Length - 1; i++)
             {
-                if (GetValueFromCardIndex(cardValues[i]) != temp)
+                if (cardValues[i] != cardValues[i + 1])
                 {
                     return false;
                 }
             }
 
             return true;
+        } return true;
         }
 ```
 
@@ -420,44 +372,22 @@ la valeur la plus haute entre les cartes en main
 - false si les cartes ne le sont pas
 
 ## algo
-1 - créé int[] faces avec les trois faces jack queen king appeler **faces**
-
-2 - créé int allFace jack 11 + queen 12 + king 13 = 36
-
-3 - compteur a 0
-
-4 - boucle for inspecte le tableau de valeur 
-
-5 - si dans le tableau **faces** on ne retrouve pas la valeur de la carte inspecter retourne false car ce nest pas un face
-
-6 - si la cartes inspecter est une face elle est aditionné au compteur
-
-7 - si le compteur n'est pas égale a allFace retourne false
-
-8 - sinon true
+il a changer et je suis lache... 
 
 
 ```c#
         public static bool HasAllFaces(int[] values)
         {
-            const int ALL_FACES_SUM = JACK + QUEEN + KING;
-            int counter = 0;
             for (int i = 0; i < values.Length; i++)
             {
-                if (!FACES.Contains(GetValueFromCardIndex(values[i])))
+                if (HasOnlyFaces(values) && HasSequence(values))
                 {
-                    return false;
+                    return true;
                 }
-
-                counter += GetValueFromCardIndex(values[i]);
             }
 
-            if (counter != ALL_FACES_SUM)
-            {
-                return false;
-            }
-
-            return true;
+            return false;
+        }  return true;
         }
 ```
 
@@ -518,6 +448,8 @@ même couleur
 - false si ce nest pas le cas
 
 ## algo
+- mettre les cartes en ordre
+
 - boucle for pour inspecter chaques couleurs
 
 - si la couleur des la carte 1 != a la couleur inspeccter retourne false
@@ -527,13 +459,15 @@ même couleur
 ```c#
         public static bool HasSameColorSequence(int[] values, int[] colors)
         {
-            for (int i = 0; i < colors.Length; i++)
+            int[] arrayEnOrdre = PutCardInOrder(values);
+
+            if ((!HasOnlySameColorCards(colors)) || !HasSequence(arrayEnOrdre))
             {
-                if (GetSuitFromCardIndex(values[i]) != colors[i])
-                {
-                    return false;
-                }
+                return false;
             }
+
+            return true;
+        }
 ```
 
 ---
@@ -590,7 +524,7 @@ même couleur
 - et un tableau de la suit de couleur contenu dans la main du joeur
 
 ### la methode retourne:
-- int = score des cartes de la meme couleur additionner
+- int = 0
 
 ## algo
 - créé compteur pour compter les carte de la couleur spécifique
@@ -602,16 +536,16 @@ même couleur
 ```c#
         public static int GetScoreFromMultipleCardsOfASuit(int suit, int[] values, int[] suits)
         {
-            int counter = 0;
+            int temp = 0;
             for (int i = 0; i < values.Length; i++)
             {
-                if (GetSuitFromCardIndex(values[i]) == suit)
+                if (suits[i] == suit)
                 {
-                    counter++;
+                    temp += GetScoreFromCardValue(values[i]);
                 }
             }
 
-            return counter;
+            return temp;
         }
 ```
 
@@ -633,33 +567,129 @@ FINIAL
 - un nombre entier qui est le score du joueur selon est regle du 31
 
 ## algo
-- créé int handScore = 0 ;
-- if (HasOnlySameColorCards)
--  boucle for pour inspecter la main 
-- additionner la valeur de la cartee dans le handScore
+il a changé et je suis lache...
 
 ```c#
         public static int GetHandScore(int[] cardIndexes)
         {
-            int handScore = 0;
-            if (HasOnlySameColorCards(cardIndexes))
+            int[] colorsValues = new int[cardIndexes.Length];
+            int[] cardValues = new int[cardIndexes.Length];
+            for (int i = 0; i < cardIndexes.Length; i++)
             {
-                for (int i = 0; i < cardIndexes.Length - 1; i++)
+                colorsValues[i] = GetSuitFromCardIndex(cardIndexes[i]);
+                cardValues[i] = GetValueFromCardIndex(cardIndexes[i]);
+            }
+            
+            return new int[] { GetHandScoreWithSpecialCombinasion(cardValues, colorsValues), GetHighestCardValue(cardValues), GetHighestColorScore(colorsValues, cardValues) }.Max();
+        }
+
+        private static int GetHighestColorScore(int[] colorsValues, int[] cardValues)
+        {
+            int bestSuitScore = 0;
+            for (int i = 0; i < colorsValues.Length; i++)
+            {
+                int suitScore = GetScoreFromMultipleCardsOfASuit(colorsValues[i], cardValues, colorsValues);
+                if (bestSuitScore < suitScore)
                 {
-                    int fris = GetSuitFromCardIndex(cardIndexes[i]);
-                    if (GetSuitFromCardIndex(cardIndexes[i]) == GetSuitFromCardIndex(cardIndexes[i + 1]))
-                    {
-                        handScore += GetValueFromCardIndex(cardIndexes[i]) + GetValueFromCardIndex(cardIndexes[i + 1]);
-                    }
+                    bestSuitScore = suitScore;
                 }
             }
-
-            return 0;
+            return bestSuitScore;
         }
 ```
 
+# Get Hand Score Wit hSpecial Combinasion
+## private static int GetHandScoreWithSpecialCombinasion(int[] cardValues, int[] colorsValues)
 
 
+## algo
+il a changé et je suis lache...
+
+```c#
+        private static int GetHandScoreWithSpecialCombinasion(int[] cardValues, int[] colorsValues)
+        {
+            int handScoreWithSpecialCombinasion = 0;
+            if (HasAllSameCardValues(cardValues))
+            {
+                if (handScoreWithSpecialCombinasion < ALL_SAME_CARDS_VALUE_SCORE)
+                {
+                    handScoreWithSpecialCombinasion = ALL_SAME_CARDS_VALUE_SCORE;
+                }
+            }
+
+            if (HasOnlyFaces(cardValues))
+            {
+                if (handScoreWithSpecialCombinasion < ONLY_FACES_SCORE)
+                {
+                    handScoreWithSpecialCombinasion = ONLY_FACES_SCORE;
+                }
+            }
+
+            if (HasOnlySameColorCards(colorsValues))
+            {
+                if (handScoreWithSpecialCombinasion < SAME_COLOR_SCORE)
+                {
+                    handScoreWithSpecialCombinasion = SAME_COLOR_SCORE;
+                }
+            }
+
+            if (HasSequence(cardValues))
+            {
+                if (handScoreWithSpecialCombinasion < SEQUENCE_SCORE)
+                {
+                    handScoreWithSpecialCombinasion = SEQUENCE_SCORE;
+                }
+            }
+
+            if (HasSameColorSequence(cardValues, colorsValues))
+            {
+                if (handScoreWithSpecialCombinasion < SAME_COLOR_SEQUENCE_SCORE)
+                {
+                    handScoreWithSpecialCombinasion = SAME_COLOR_SEQUENCE_SCORE;
+                }
+            }
+
+            if (HasAllFaces(cardValues))
+            {
+                if (handScoreWithSpecialCombinasion < ALL_FACES_SCORE)
+                {
+                    handScoreWithSpecialCombinasion = ALL_FACES_SCORE;
+                }
+            }
+
+            return handScoreWithSpecialCombinasion;
+        }
+```
+
+# Carte distribution
+##  public static void DrawFaces(int[] cardValues, bool[] selectedCards, bool[] availableCards)
+
+
+## algo
+il a changé et je suis lache...
+
+
+```c#
+        public static void DrawFaces(int[] cardValues, bool[] selectedCards, bool[] availableCards)
+        {
+            for (int i = 0; i < selectedCards.Length; i++)
+            {
+                if (selectedCards[i] == false)
+                {
+                    int newCard;
+
+                    do
+                    {
+                        newCard = new Random().Next(0, 52);
+                    } while (!availableCards[newCard]);
+
+                    availableCards[newCard] = true;
+                    cardValues[i] = newCard;
+                    availableCards[newCard] = false;
+                }
+            }
+        }
+```
 
 
 

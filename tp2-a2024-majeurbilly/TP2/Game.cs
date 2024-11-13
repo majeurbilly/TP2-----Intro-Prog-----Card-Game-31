@@ -55,25 +55,6 @@ namespace TP2
             return index % 13;
         }
 
-        public static void DistributeCard(int[] cardValues, bool[] selectedCards, bool[] availableCards)
-        {
-            for (int i = 0; i < selectedCards.Length; i++)
-            {
-                if (selectedCards[i] == false)
-                {
-                    int newCard;
-
-                    do
-                    {
-                        newCard = new Random().Next(0, 52);
-                    } while (!availableCards[newCard]);
-
-                    availableCards[newCard] = true;
-                    cardValues[i] = newCard;
-                    availableCards[newCard] = false;
-                }
-            }
-        }
 
         public static int GetScoreFromCardValue(int cardValue)
         {
@@ -154,10 +135,9 @@ namespace TP2
 
         public static bool HasAllSameCardValues(int[] cardValues)
         {
-            int temp = GetValueFromCardIndex(cardValues[0]);
-            for (int i = 1; i < cardValues.Length; i++)
+            for (int i = 1; i < cardValues.Length - 1; i++)
             {
-                if (GetValueFromCardIndex(cardValues[i]) != temp)
+                if (cardValues[i] != cardValues[i + 1])
                 {
                     return false;
                 }
@@ -168,22 +148,15 @@ namespace TP2
 
         public static bool HasAllFaces(int[] values)
         {
-            const int ALL_FACES_SUM = JACK + QUEEN + KING;
-            int counter = 0;
             for (int i = 0; i < values.Length; i++)
             {
-                if (!HasOnlyFaces(values))
+                if (HasOnlyFaces(values) && HasSequence(values))
                 {
-                    return false;
+                    return true;
                 }
             }
 
-            if (!HasSequence(values))
-            {
-                return false;
-            }
-
-            return true;
+            return false;
         }
 
         public static bool HasOnlyFaces(int[] values)
@@ -198,26 +171,7 @@ namespace TP2
 
             return true;
         }
-
-        public static int[] SwitchAceValues(int[] cardValues)
-        {
-            bool permutation = true;
-            while (permutation)
-            {
-                permutation = false;
-                for (int i = 0; i < cardValues.Length; i++)
-                {
-                    int additionArray;
-                    if (cardValues[i] == ACE)
-                    {
-                        cardValues[i] = ACES_SCORE;
-                        permutation = true;
-                    }
-                }
-            }
-
-            return cardValues;
-        }
+        
 
         public static bool HasSameColorSequence(int[] values, int[] colors)
         {
@@ -245,7 +199,7 @@ namespace TP2
             return temp;
         }
 
-        public static int[] PutCardInOrder(int[] values)
+        private static int[] PutCardInOrder(int[] values)
         {
             bool permutation = true;
             while (permutation)
@@ -283,10 +237,6 @@ namespace TP2
 
         public static int GetHandScore(int[] cardIndexes)
         {
-            int handScoreWithSpecialCombinasion = 0;
-            int handScoreWithAddtion = 0;
-            int handScoreWithHighestCard = 0;
-            int finalHandScore = 0;
             int[] colorsValues = new int[cardIndexes.Length];
             int[] cardValues = new int[cardIndexes.Length];
             for (int i = 0; i < cardIndexes.Length; i++)
@@ -294,53 +244,27 @@ namespace TP2
                 colorsValues[i] = GetSuitFromCardIndex(cardIndexes[i]);
                 cardValues[i] = GetValueFromCardIndex(cardIndexes[i]);
             }
-
-            cardValues = SwitchAceValues(cardValues);
-
-
-            handScoreWithSpecialCombinasion =
-                GetHandScoreWithSpecialCombinasion(cardValues, handScoreWithSpecialCombinasion, colorsValues);
-
-            if (HasOnlySameColorCards(colorsValues))
-            {
-                for (int i = 0; i < colorsValues.Length; i++)
-                {
-                    int temp = 0;
-                    if (temp < GetScoreFromMultipleCardsOfASuit(colorsValues[i], cardValues, colorsValues))
-                    {
-                        handScoreWithAddtion = GetScoreFromMultipleCardsOfASuit(colorsValues[i], cardValues, colorsValues);
-                    }
-                }
-            }
-
-
-            handScoreWithHighestCard = GetHighestCardValue(cardValues);
-
-
-            if (handScoreWithSpecialCombinasion > handScoreWithAddtion &&
-                handScoreWithSpecialCombinasion > handScoreWithHighestCard)
-            {
-                finalHandScore = handScoreWithSpecialCombinasion;
-            }
-
-            if (handScoreWithAddtion > handScoreWithSpecialCombinasion &&
-                handScoreWithAddtion > handScoreWithHighestCard)
-            {
-                finalHandScore = handScoreWithAddtion;
-            }
-
-            if (handScoreWithHighestCard > handScoreWithSpecialCombinasion &&
-                handScoreWithHighestCard > handScoreWithAddtion)
-            {
-                finalHandScore = handScoreWithHighestCard;
-            }
-
-            return finalHandScore;
+            // retourne le plus haut des int de l'array de scores.
+            return new int[] { GetHandScoreWithSpecialCombinasion(cardValues, colorsValues), GetHighestCardValue(cardValues), GetHighestColorScore(colorsValues, cardValues) }.Max();
         }
 
-        private static int GetHandScoreWithSpecialCombinasion(int[] cardValues, int handScoreWithSpecialCombinasion,
-            int[] colorsValues)
+        private static int GetHighestColorScore(int[] colorsValues, int[] cardValues)
         {
+            int bestSuitScore = 0;
+            for (int i = 0; i < colorsValues.Length; i++)
+            {
+                int suitScore = GetScoreFromMultipleCardsOfASuit(colorsValues[i], cardValues, colorsValues);
+                if (bestSuitScore < suitScore)
+                {
+                    bestSuitScore = suitScore;
+                }
+            }
+            return bestSuitScore;
+        }
+
+        private static int GetHandScoreWithSpecialCombinasion(int[] cardValues, int[] colorsValues)
+        {
+            int handScoreWithSpecialCombinasion = 0;
             if (HasAllSameCardValues(cardValues))
             {
                 if (handScoreWithSpecialCombinasion < ALL_SAME_CARDS_VALUE_SCORE)
@@ -390,6 +314,26 @@ namespace TP2
             }
 
             return handScoreWithSpecialCombinasion;
+        }
+
+        public static void DrawFaces(int[] cardValues, bool[] selectedCards, bool[] availableCards)
+        {
+            for (int i = 0; i < selectedCards.Length; i++)
+            {
+                if (selectedCards[i] == false)
+                {
+                    int newCard;
+
+                    do
+                    {
+                        newCard = new Random().Next(0, 52);
+                    } while (!availableCards[newCard]);
+
+                    availableCards[newCard] = true;
+                    cardValues[i] = newCard;
+                    availableCards[newCard] = false;
+                }
+            }
         }
     }
 }

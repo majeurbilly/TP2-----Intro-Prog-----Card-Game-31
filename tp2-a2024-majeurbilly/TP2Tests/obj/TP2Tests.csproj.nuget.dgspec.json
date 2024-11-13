@@ -13,6 +13,7 @@
         "packagesPath": "C:\\Users\\jefou\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\jefou\\OneDrive\\Desktop\\TP2-----Intro-Prog-----Card-Game-31\\tp2-a2024-majeurbilly\\TP2Tests\\obj\\",
         "projectStyle": "PackageReference",
+        "UsingMicrosoftNETSdk": false,
         "configFilePaths": [
           "C:\\Users\\jefou\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
@@ -113,6 +114,7 @@
         "packagesPath": "C:\\Users\\jefou\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\jefou\\OneDrive\\Desktop\\TP2-----Intro-Prog-----Card-Game-31\\tp2-a2024-majeurbilly\\TP2\\obj\\",
         "projectStyle": "PackageReference",
+        "UsingMicrosoftNETSdk": false,
         "configFilePaths": [
           "C:\\Users\\jefou\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"

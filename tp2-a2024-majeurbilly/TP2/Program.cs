@@ -24,7 +24,7 @@ namespace TP2
             for (int i = 0; i < selectedCards.Length; i++)
                 selectedCards[i] = false;
 
-            Game.DistributeCard(cardIndexes, selectedCards, availableCards);
+            Game.DrawFaces(cardIndexes, selectedCards, availableCards);
             for (int i = 0; i < NUM_DRAWS; i++)
             {
                 // Afficher les cartes
@@ -37,7 +37,7 @@ namespace TP2
                 // Permettre au joueur de sélectionner les cartes à garder
                 Display.SelectCards(selectedCards);
                 // Relancer les cartes que le joueur ne veut pas garder.
-                Game.DistributeCard(cardIndexes, selectedCards, availableCards);
+                Game.DrawFaces(cardIndexes, selectedCards, availableCards);
             }
 
             Display.WriteString("La partie est terminée!", 0, Console.WindowHeight - 1, ConsoleColor.Black);
