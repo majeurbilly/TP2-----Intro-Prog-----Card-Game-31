@@ -30,6 +30,7 @@ namespace TP2
         public const int NUM_SUITS = 4;
         public const int NUM_CARDS_PER_SUIT = 13;
         public const int NUM_CARDS = NUM_SUITS * NUM_CARDS_PER_SUIT;
+        public const int CARDS_VALUE_PER_INDEX = 13;
         public const int NUM_CARDS_IN_HAND = 3;
 
         public const int FACES_SCORE = 10;
@@ -52,7 +53,7 @@ namespace TP2
 
         public static int GetValueFromCardIndex(int index)
         {
-            return index % 13;
+            return index % CARDS_VALUE_PER_INDEX;
         }
 
 
@@ -175,7 +176,7 @@ namespace TP2
 
         public static bool HasSameColorSequence(int[] values, int[] colors)
         {
-            int[] arrayEnOrdre = PutCardInOrder(values);
+            int[] arrayEnOrdre = GetCardInOrder(values);
 
             if ((!HasOnlySameColorCards(colors)) || !HasSequence(arrayEnOrdre))
             {
@@ -199,7 +200,7 @@ namespace TP2
             return temp;
         }
 
-        private static int[] PutCardInOrder(int[] values)
+        private static int[] GetCardInOrder(int[] values)
         {
             bool permutation = true;
             while (permutation)
@@ -225,7 +226,7 @@ namespace TP2
         {
             for (int i = 0; i < values.Length - 1; i++)
             {
-                int[] arrayOrder = PutCardInOrder(values);
+                int[] arrayOrder = GetCardInOrder(values);
                 if (arrayOrder[i] + 1 != arrayOrder[i + 1])
                 {
                     return false;
@@ -244,7 +245,6 @@ namespace TP2
                 colorsValues[i] = GetSuitFromCardIndex(cardIndexes[i]);
                 cardValues[i] = GetValueFromCardIndex(cardIndexes[i]);
             }
-            // retourne le plus haut des int de l'array de scores.
             return new int[] { GetHandScoreWithSpecialCombinasion(cardValues, colorsValues), GetHighestCardValue(cardValues), GetHighestColorScore(colorsValues, cardValues) }.Max();
         }
 
@@ -326,7 +326,7 @@ namespace TP2
 
                     do
                     {
-                        newCard = new Random().Next(0, 52);
+                        newCard = new Random().Next(0, NUM_CARDS);
                     } while (!availableCards[newCard]);
 
                     availableCards[newCard] = true;
